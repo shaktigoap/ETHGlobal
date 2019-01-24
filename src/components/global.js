@@ -51,11 +51,7 @@ export const Button = styled.button`
     padding: 0 24px;
   `};
 
-  ${props =>
-    props.stretch &&
-    `
-    width: 100%;
-  `};
+  ${props => props.stretch && `width: 100%;`};
 
   &:active {
     background-color: ${COLOR.blue_dark.regular};
@@ -67,4 +63,41 @@ export const Card = styled.div`
   background-color: ${COLOR.white.regular};
   border-radius: 10px;
   box-shadow: ${props => (props.noShadow ? 'none' : SHADOW.regular)};
+`;
+
+export const Pill = styled.div`
+  height: 36px;
+  border-radius: 18px;
+  padding: 0 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: ${FONT.primary};
+  ${FONT_SIZE.xxsmall};
+
+  ${props => {
+    switch (props.appearance) {
+      case 'alert':
+        return `
+          background-color: ${COLOR.red.light};
+          color: ${COLOR.red.regular};
+        `;
+      case 'secondary':
+        return `
+          background-color: ${COLOR.blue_dark.xlight};
+          color: ${COLOR.blue_dark.light};
+        `;
+      case 'primary':
+      default:
+        return `
+          background-color: ${COLOR.blue.light};
+          color: ${COLOR.blue.regular};
+        `;
+    }
+  }}
+
+  ${props => props.stretch && `width: 100%`};
 `;
