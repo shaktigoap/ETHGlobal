@@ -27,6 +27,8 @@ export const Section = styled.section`
 `;
 
 export const Button = styled.button`
+  outline: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,4 +56,8 @@ export const Button = styled.button`
     `
     width: 100%;
   `};
+
+  &:active {
+    background-color: ${COLOR.blue_dark.regular};
+  }
 `;
