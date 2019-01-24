@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SCREEN, COLOR, FONT_SIZE, FONT } from 'constants';
+import { SCREEN, COLOR, FONT_SIZE, FONT, SHADOW } from 'constants';
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -29,7 +29,7 @@ export const Section = styled.section`
 export const Button = styled.button`
   outline: none;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 54px;
@@ -60,4 +60,11 @@ export const Button = styled.button`
   &:active {
     background-color: ${COLOR.blue_dark.regular};
   }
+`;
+
+export const Card = styled.div`
+  padding: ${props => (props.small ? '16px' : '40px')};
+  background-color: ${COLOR.white.regular};
+  border-radius: 10px;
+  box-shadow: ${props => (props.noShadow ? 'none' : SHADOW.regular)};
 `;
