@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${FONT.primary};
     color: ${COLOR.blue_dark.regular};
     font-weight: 700;
+    margin: 0;
   }
 
   h1 {
