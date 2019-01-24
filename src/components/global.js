@@ -101,3 +101,23 @@ export const Pill = styled.div`
 
   ${props => props.stretch && `width: 100%`};
 `;
+
+export const Input = styled.input`
+  outline: none;
+  height: 54px;
+  border-radius: 27px;
+  padding: 0 24px;
+  border: 2px solid transparent;
+  width: 100%;
+  background-color: ${COLOR.blue.xlight};
+  color: ${COLOR.blue_dark.regular};
+  ${FONT_SIZE.small};
+
+  &:placeholder {
+    color: ${COLOR.blue_dark.light};
+  }
+
+  &:focus {
+    border: 2px solid ${COLOR.blue.light};
+  }
+`;
