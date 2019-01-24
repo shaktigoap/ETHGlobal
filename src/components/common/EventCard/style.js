@@ -1,16 +1,33 @@
 import styled from 'styled-components';
 
-import { COLOR, FONT_SIZE } from 'constants';
-import { Card } from 'components/global';
+import { COLOR, FONT_SIZE, SHADOW } from 'constants';
+import { Card, Button } from 'components/global';
 
 export const CardContainer = styled(Card)`
   padding: 0;
   overflow: hidden;
+  height: 380px;
+  transition: box-shadow 0.3s ease-out;
+
+  ${props =>
+    !props.inactive &&
+    `
+    &:hover {
+      box-shadow: ${SHADOW.light};
+      ${Cover} {
+        height: 120px;
+      }
+      ${ApplyButton} {
+        opacity: 1;
+      }
+    }
+  `};
 `;
 
 export const Cover = styled.div`
   background-color: ${props => props.color};
-  height: 190px;
+  height: 180px;
+  transition: height 0.3s ease-out;
 `;
 
 export const CardContent = styled.div`
@@ -41,4 +58,12 @@ export const Subtitle = styled.div`
   color: ${COLOR.blue_dark.light};
   margin-top: 4px;
   margin-bottom: 16px;
+`;
+
+export const ApplyButton = styled(Button)`
+  margin: 8px 0;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
 `;
