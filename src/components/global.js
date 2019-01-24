@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SCREEN } from 'constants';
+import { SCREEN, COLOR, FONT_SIZE, FONT } from 'constants';
 
 export const Container = styled.div`
   max-width: 1200px;
@@ -24,4 +24,34 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   padding: 96px 0;
+`;
+
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  padding: 0 32px;
+  border-radius: 27px;
+  background-color: ${COLOR.blue.regular};
+  color: ${COLOR.white.regular};
+
+  font-family: ${FONT.primary};
+  font-weight: bold;
+  ${FONT_SIZE.small};
+
+  ${props =>
+    props.small &&
+    `
+    ${FONT_SIZE.xsmall};
+    height: 44px;
+    border-radius: 22px;
+    padding: 0 24px;
+  `};
+
+  ${props =>
+    props.stretch &&
+    `
+    width: 100%;
+  `};
 `;
