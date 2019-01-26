@@ -9,7 +9,7 @@ import Sponsors from 'components/sections/Sponsors';
 import FAQ from 'components/sections/FAQ';
 
 import ActivityIcon from 'static/icons/activity.svg';
-import EventCard from '../components/common/EventCard/EventCard';
+import FAQItem from 'common/FAQ';
 
 const IndexPage = () => (
   <Layout>
@@ -23,14 +23,7 @@ const IndexPage = () => (
       <div>
         Random icon here: <img src={ActivityIcon} alt="activity" />
       </div>
-      <div style={{ maxWidth: 260 }}>
-        <EventCard
-          primaryColor="tomato"
-          title="ETHParis"
-          location="Paris, France"
-          dates="Dec 6 - 9, 2019"
-        />
-      </div>
+      <FAQItem />
       <Link to="/page-2/">Go to page 2</Link>
     </Container>
     <About />
