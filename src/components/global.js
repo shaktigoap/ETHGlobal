@@ -26,6 +26,7 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   padding: 96px 0;
+  background-color: ${({ background }) => (background ? background : 'none')};
 `;
 
 export const Button = styled.button`
@@ -64,7 +65,7 @@ export const Card = styled.div`
   padding: ${props => (props.small ? '24px' : '40px')};
   background-color: ${COLOR.white.regular};
   border-radius: 10px;
-  box-shadow: ${props => (props.noShadow ? 'none' : SHADOW.regular)};
+  box-shadow: ${props => (props.noShadow ? 'none' : SHADOW.light)};
 `;
 
 export const Pill = styled.div`

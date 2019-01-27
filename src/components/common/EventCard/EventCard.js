@@ -23,7 +23,9 @@ const EventCard = ({
   <CardContainer inactive={inactive} {...other}>
     <Cover color={primaryColor} />
     <CardContent>
-      <Avatar color={primaryColor}>avatar</Avatar>
+      <Avatar color={primaryColor}>
+        <img src={icon} alt={title + 'logo'} />
+      </Avatar>
       <h3>{title}</h3>
       <Subtitle>{location}</Subtitle>
       <Pill stretch appearance={inactive ? 'secondary' : 'primary'}>
