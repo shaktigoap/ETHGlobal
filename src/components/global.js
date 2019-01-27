@@ -61,7 +61,7 @@ export const Button = styled.button`
 `;
 
 export const Card = styled.div`
-  padding: ${props => (props.small ? '16px' : '40px')};
+  padding: ${props => (props.small ? '24px' : '40px')};
   background-color: ${COLOR.white.regular};
   border-radius: 10px;
   box-shadow: ${props => (props.noShadow ? 'none' : SHADOW.regular)};
@@ -79,6 +79,7 @@ export const Pill = styled.div`
   font-weight: bold;
   font-family: ${FONT.primary};
   ${FONT_SIZE.xxsmall};
+  letter-spacing: 1px;
 
   ${props => {
     switch (props.appearance) {
@@ -121,5 +122,15 @@ export const Input = styled.input`
 
   &:focus {
     border: 2px solid ${COLOR.blue.light};
+  }
+`;
+
+export const FloatingContainer = styled.div`
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+
+  & > div {
+    position: absolute;
   }
 `;
