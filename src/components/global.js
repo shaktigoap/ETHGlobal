@@ -9,7 +9,6 @@ export const Container = styled.div`
 
   @media (min-width: ${SCREEN.xs}) {
     max-width: 540px;
-    padding: 0;
   }
 
   @media (min-width: ${SCREEN.sm}) {
