@@ -83,10 +83,6 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 24px;
-
-  @media (max-width: 991px) {
-    grid-gap: 0;
-  }
 `;
 
 const Icons = styled.div`

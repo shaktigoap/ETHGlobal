@@ -34,6 +34,10 @@ export const GlobalStyles = createGlobalStyle`
     ${FONT_SIZE.small};
   }
 
+  p {
+    margin: 0;
+  }
+
   a {
     text-decoration: none;
     color: ${COLOR.blue.regular};
