@@ -13,7 +13,8 @@ export const CardContainer = styled(Card)`
     !props.inactive &&
     `
     &:hover {
-      box-shadow: ${SHADOW.light};
+      box-shadow: ${SHADOW.regular};
+      
       ${Cover} {
         height: 120px;
       }
