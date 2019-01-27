@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { SCREEN, COLOR, FONT_SIZE, FONT, SHADOW } from 'constants';
 
 export const Container = styled.div`
-  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
@@ -19,6 +18,10 @@ export const Container = styled.div`
 
   @media (min-width: ${SCREEN.md}) {
     max-width: 960px;
+  }
+
+  @media (min-width: ${SCREEN.lg}) {
+    max-width: 1200px;
   }
 `;
 
