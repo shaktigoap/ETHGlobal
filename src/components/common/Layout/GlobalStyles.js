@@ -33,4 +33,14 @@ export const GlobalStyles = createGlobalStyle`
   h4 {
     ${FONT_SIZE.small};
   }
+
+  a {
+    text-decoration: none;
+    color: ${COLOR.blue.regular};
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 `;
