@@ -27,8 +27,8 @@ const SOCIAL_LINKS = [
   },
 ];
 
-const About = () => (
-  <Section id="about">
+const About = props => (
+  <Section id="about" {...props}>
     <Container>
       <h3 style={{ color: COLOR.blue.regular }}>About us</h3>
       <HeadingContainer>
