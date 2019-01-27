@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import SEO from '../SEO';
 
-import { GlobalStyles } from './style';
+import { GlobalStyles } from './GlobalStyles';
 import Navbar from 'common/Navbar';
 
 const Layout = ({ children }) => (
