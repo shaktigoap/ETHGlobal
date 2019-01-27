@@ -3,7 +3,7 @@ import Collapsible from 'react-collapsible';
 
 import { Wrapper } from './style';
 
-const FAQ = () => (
+const FAQ = ({ title, content }) => (
   <Wrapper>
     <Collapsible
       className="faq"
@@ -12,13 +12,11 @@ const FAQ = () => (
       triggerOpenedClassName="faq-title active"
       triggerTagName="button"
       contentInnerClassName="faq-content"
-      trigger="Start here"
+      trigger={title}
       transitionTime={300}
       easing="ease-out"
     >
-      This is the collapsible content. It can be any element or React component
-      you like. It can even be another Collapsible component. Check out the next
-      section!
+      {content}
     </Collapsible>
   </Wrapper>
 );

@@ -9,7 +9,6 @@ import Sponsors from 'components/sections/Sponsors';
 import FAQ from 'components/sections/FAQ';
 
 import ActivityIcon from 'static/icons/activity.svg';
-import FAQItem from 'common/FAQ';
 
 const IndexPage = () => (
   <Layout>
@@ -23,7 +22,6 @@ const IndexPage = () => (
       <div>
         Random icon here: <img src={ActivityIcon} alt="activity" />
       </div>
-      <FAQItem />
       <Link to="/page-2/">Go to page 2</Link>
     </Container>
     <About />
