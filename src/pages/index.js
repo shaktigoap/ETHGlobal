@@ -8,19 +8,19 @@ import FAQ from 'components/sections/FAQ';
 
 import { FloatingContainer } from 'components/global';
 import AlertCard from 'common/AlertCard';
+import NewsletterForm from 'common/NewsletterForm';
 
 const IndexPage = () => (
   <Layout>
     <About style={{ paddingBottom: 144 }} />
     <FloatingContainer>
-      <AlertCard
-        title="Announcement"
-        content="Applications open for ETHDenver (Feb 15-17), ETHParis (Mar 8-10), and ETHCapeTown (Apr 19-21)!"
-        style={{ marginTop: -80 }}
-      />
+      <AlertCard style={{ marginTop: -80 }} />
     </FloatingContainer>
-    <Events style={{ paddingTop: 144 }} />
-    <Partners />
+    <Events style={{ paddingTop: 144, paddingBottom: 296 }} />
+    <FloatingContainer>
+      <NewsletterForm style={{ marginTop: -200 }} />
+    </FloatingContainer>
+    <Partners style={{ paddingTop: 296 }} />
     <FAQ />
   </Layout>
 );
