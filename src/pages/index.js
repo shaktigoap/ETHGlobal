@@ -5,6 +5,7 @@ import About from 'components/sections/About';
 import Events from 'components/sections/Events';
 import Partners from 'components/sections/Partners';
 import FAQ from 'components/sections/FAQ';
+import Footer from 'components/sections/Footer';
 
 import { FloatingContainer } from 'components/global';
 import AlertCard from 'common/AlertCard';
@@ -22,6 +23,7 @@ const IndexPage = () => (
     </FloatingContainer>
     <Partners style={{ paddingTop: 296 }} />
     <FAQ />
+    <Footer />
   </Layout>
 );
 
