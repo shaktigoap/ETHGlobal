@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { Section, Container, Card } from 'components/global';
 import ExternalLink from 'common/ExternalLink';
 
+import { COLOR } from 'constants';
+
 import L4Logo from 'static/logos/L4.svg';
 import SvangelLogo from 'static/logos/Svangel.svg';
 import EthereumLogo from 'static/logos/Ethereum.svg';
@@ -27,7 +29,7 @@ const PARTNERS = [
 ];
 
 const Sponsors = props => (
-  <Section id="sponsors" {...props}>
+  <Section id="sponsors" {...props} background={COLOR.blue.light}>
     <Container>
       <h2 style={{ textAlign: 'center' }}>Partners</h2>
       <Grid>

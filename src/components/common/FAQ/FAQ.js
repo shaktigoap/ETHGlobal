@@ -3,7 +3,7 @@ import Collapsible from 'react-collapsible';
 
 import { Wrapper } from './style';
 
-const FAQ = ({ title, content }) => (
+const FAQ = ({ title, children }) => (
   <Wrapper>
     <Collapsible
       className="faq"
@@ -16,7 +16,7 @@ const FAQ = ({ title, content }) => (
       transitionTime={300}
       easing="ease-out"
     >
-      {content}
+      {children}
     </Collapsible>
   </Wrapper>
 );

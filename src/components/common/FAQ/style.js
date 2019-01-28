@@ -6,11 +6,11 @@ export const Wrapper = styled.div`
   .faq {
     border-radius: 5px;
     background-color: ${COLOR.white.regular};
-    box-shadow: ${SHADOW.light};
+    box-shadow: ${SHADOW.regular};
     transition: box-shadow 0.3s ease-out;
 
     &.active {
-      box-shadow: ${SHADOW.regular};
+      box-shadow: ${SHADOW.light};
     }
   }
 
