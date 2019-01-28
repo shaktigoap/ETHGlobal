@@ -26,7 +26,7 @@ export const Container = styled.div`
 
 export const Section = styled.section`
   padding: 96px 0;
-  background-color: ${({ background }) => (background ? background : 'none')};
+  background: ${({ background }) => (background ? background : 'none')};
 `;
 
 export const Button = styled.button`
