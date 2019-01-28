@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from 'common/Layout';
 import About from 'components/sections/About';
 import Events from 'components/sections/Events';
-import Sponsors from 'components/sections/Sponsors';
+import Partners from 'components/sections/Partners';
 import FAQ from 'components/sections/FAQ';
 
 import { FloatingContainer } from 'components/global';
@@ -20,7 +20,7 @@ const IndexPage = () => (
       />
     </FloatingContainer>
     <Events style={{ paddingTop: 144 }} />
-    <Sponsors />
+    <Partners />
     <FAQ />
   </Layout>
 );
