@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Layout from 'common/Layout';
+import Header from 'components/sections/Header';
 import About from 'components/sections/About';
 import Events from 'components/sections/Events';
 import Partners from 'components/sections/Partners';
@@ -13,7 +14,8 @@ import NewsletterForm from 'common/NewsletterForm';
 
 const IndexPage = () => (
   <Layout>
-    <About style={{ paddingBottom: 144 }} />
+    <Header />
+    <About style={{ paddingBottom: 160, position: 'relative' }} />
     <FloatingContainer>
       <AlertCard style={{ marginTop: -80 }} />
     </FloatingContainer>
