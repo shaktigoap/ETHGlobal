@@ -22,6 +22,13 @@ export const Container = styled.div`
   @media (min-width: ${SCREEN.lg}) {
     max-width: 1200px;
   }
+
+  ${props =>
+    props.fluid &&
+    `
+    max-width: 1200px !important;
+    padding: 0;
+  `};
 `;
 
 export const Section = styled.section`
