@@ -34,7 +34,7 @@ const Centered = styled.div`
 
   p {
     margin-top: 16px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
 `;
 
@@ -50,7 +50,11 @@ const Form = styled.form`
     flex: 1;
   }
 
-  @media (max-width: 767) {
+  > * {
+    margin-top: 16px;
+  }
+
+  @media (max-width: 767px) {
     flex-direction: column;
   }
 `;

@@ -140,5 +140,9 @@ export const FloatingContainer = styled.div`
 
   & > div {
     position: absolute;
+
+    @media (max-width: 991px) {
+      margin: 0 16px;
+    }
   }
 `;
