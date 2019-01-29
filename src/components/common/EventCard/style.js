@@ -2,28 +2,7 @@ import styled from 'styled-components';
 
 import { COLOR, FONT_SIZE, SHADOW } from 'constants';
 import { Card, Button } from 'components/global';
-
-export const CardContainer = styled(Card)`
-  padding: 0;
-  overflow: hidden;
-  height: 380px;
-  transition: box-shadow 0.3s ease-out;
-
-  ${props =>
-    !props.inactive &&
-    `
-    &:hover {
-      box-shadow: ${SHADOW.regular};
-      
-      ${Cover} {
-        height: 120px;
-      }
-      ${ApplyButton} {
-        opacity: 1;
-      }
-    }
-  `};
-`;
+import ExternalLink from 'common/ExternalLink';
 
 export const Cover = styled.div`
   background-color: ${props => props.color};
@@ -67,4 +46,45 @@ export const ApplyButton = styled(Button)`
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
+`;
+
+export const LinkWrapper = styled(ExternalLink)`
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+export const CardContainer = styled(Card)`
+  padding: 0;
+  overflow: hidden;
+  height: 380px;
+  transition: all 0.3s ease-out;
+
+  ${props =>
+    !props.inactive &&
+    `
+    &:hover {
+      box-shadow: ${SHADOW.regular};
+      
+      ${Cover} {
+        height: 120px;
+      }
+      ${ApplyButton} {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 992px) {
+      ${Cover} {
+        height: 120px;
+      }
+      ${ApplyButton} {
+        opacity: 1;
+      }
+    }
+  `};
+
+  &:hover {
+    transform: scale(0.96);
+  }
 `;
