@@ -36,18 +36,18 @@ const UPCOMING_EVENTS = [
 
 const Events = props => (
   <Section id="events" {...props} background={COLOR.blue.xlight}>
-    <Container>
+    <Container fluid>
       <HeadingContainer>
         <h3>Events</h3>
         <h2>Upcoming Events</h2>
       </HeadingContainer>
-      <CardGrid>
+      <CardGrid num={UPCOMING_EVENTS.length}>
         {UPCOMING_EVENTS.map(event => (
           <EventCard key={event.title} {...event} />
         ))}
       </CardGrid>
       <h3 style={{ marginTop: 64, textAlign: 'center' }}>Past Events</h3>
-      <CardGrid>
+      <CardGrid num={UPCOMING_EVENTS.length * 2}>
         {UPCOMING_EVENTS.map(event => (
           <EventCard key={event.title} {...event} inactive />
         ))}
@@ -78,6 +78,14 @@ const CardGrid = styled.div`
   grid-template-columns: repeat(auto-fit, 256px);
   justify-content: center;
   grid-gap: 24px;
+
+  @media (max-width: 991px) {
+    padding: 0 32px;
+    padding-bottom: 24px;
+    grid-template-columns: ${props => `repeat(${props.num}, 256px)`};
+    overflow-x: scroll;
+    justify-content: start;
+  }
 `;
 
 export default Events;
