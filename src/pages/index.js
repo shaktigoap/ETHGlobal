@@ -6,6 +6,7 @@ import About from 'components/sections/About';
 import Events from 'components/sections/Events';
 import Partners from 'components/sections/Partners';
 import Sponsors from 'components/sections/Sponsors';
+import Team from 'components/sections/Team';
 import FAQ from 'components/sections/FAQ';
 import Footer from 'components/sections/Footer';
 
@@ -26,6 +27,7 @@ const IndexPage = () => (
     </FloatingContainer>
     <Partners style={{ paddingTop: 296 }} />
     <Sponsors />
+    <Team />
     <FAQ />
     <Footer />
   </Layout>
