@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Container } from 'components/global';
+import SocialIcons from 'common/SocialIcons';
 
 import EthGlobalLogo from 'static/icons/ETHGlobal.svg';
 
@@ -17,6 +18,7 @@ const Footer = props => (
           inquiries
         </p>
         <a href="mailto:hello@ethglobal.co">hello@ethglobal.co</a>
+        <SocialIcons white style={{ marginTop: 24 }} />
       </Centered>
       <Copyright>
         <span>© ETHGLOBAL 2018. ALL RIGHTS RESERVED.</span>

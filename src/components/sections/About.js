@@ -1,32 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import Media from 'react-media';
 
 import { Section, Container } from 'components/global';
 import ExternalLink from 'common/ExternalLink';
+import SocialIcons from 'common/SocialIcons';
 
 import theme from '../../theme';
-
-import GithubIcon from 'static/icons/Github.svg';
-import MediumIcon from 'static/icons/Medium.svg';
-import TwitterIcon from 'static/icons/Twitter.svg';
-
-const SOCIAL_LINKS = [
-  {
-    name: 'Twitter',
-    icon: TwitterIcon,
-    href: 'https://twitter.com/ethglobal',
-  },
-  {
-    name: 'Medium',
-    icon: MediumIcon,
-    href: 'https://medium.com/ethglobal',
-  },
-  {
-    name: 'Github',
-    icon: GithubIcon,
-    href: 'https://github.com/ethglobal',
-  },
-];
 
 const About = props => (
   <Section id="about" {...props}>
@@ -34,13 +14,9 @@ const About = props => (
       <h3 style={{ color: theme.color.blue.regular }}>About us</h3>
       <HeadingContainer>
         <h1>Building our decentralized future</h1>
-        <Icons>
-          {SOCIAL_LINKS.map(({ name, icon, href }) => (
-            <ExternalLink key={name} href={href}>
-              <img src={icon} alt={name} />
-            </ExternalLink>
-          ))}
-        </Icons>
+        <Media query="(min-width: 992px)">
+          <SocialIcons style={{ alignSelf: 'flex-end' }} />
+        </Media>
       </HeadingContainer>
       <Content>
         <p>
