@@ -29,6 +29,16 @@ const FAQS = [
       </>
     ),
   },
+  {
+    title: 'Can you help run a hackathon in my city?',
+    content: () => (
+      <>
+        You can apply here! If we can't make your event an official part of our
+        calendar, we may still be able to provide support and advice on how to
+        make your hackathon the best it can be.
+      </>
+    ),
+  },
 ];
 
 const FAQ = props => (

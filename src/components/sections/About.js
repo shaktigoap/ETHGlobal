@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Media from 'react-media';
 
 import { Section, Container } from 'components/global';
-import ExternalLink from 'common/ExternalLink';
 import SocialIcons from 'common/SocialIcons';
 
 import theme from '../../theme';
@@ -21,25 +20,18 @@ const About = props => (
       <Content>
         <p>
           Hackathons teach new skills, strengthen developer communities, and
-          push the limits of new technologies. At ETHGlobal we're leveraging our
-          team's experience running{' '}
-          <ExternalLink href="https://ethwaterloo.com/">
-            ETHWaterloo
-          </ExternalLink>{' '}
-          and{' '}
-          <ExternalLink href="https://hackthenorth.com/">
-            Hack the North
-          </ExternalLink>{' '}
-          to foster a world-class ecosystem of Ethereum developers and
-          entrepreneurs, collectively building the Web 3 world.
+          push the limits of new technologies. At ETHGlobal, we're leveraging
+          our years of experience to foster a world-class ecosystem of Ethereum
+          developers and entrepreneurs.nd entrepreneurs, collectively building
+          the Web 3 world.
         </p>
         <p>
-          To make this happen, we offer assistance and expertise to regional
-          hackathons across the globe, and host one major hackathon ourselves
-          every year. Our assistance includes a toolset of APIs for event
-          registration and management, a playbook for running an Ethereum
-          hackathon, and our assistance securing leading speakers, judges, and
-          sponsors in the blockchain space.
+          <strong>Learn:</strong> New to Ethereum? Our events are the best way
+          to join the community. <br />
+          <strong>Build:</strong> Create a product, get real feedback from top
+          developers, launch your company. <br />
+          <strong>Sponsor:</strong> Reach and engage the largest collection of
+          Ethereum developers on the planet. <br />
         </p>
       </Content>
     </Container>
@@ -60,20 +52,6 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 24px;
-`;
-
-const Icons = styled.div`
-  display: flex;
-  align-self: flex-end;
-  margin-bottom: 8px;
-
-  img {
-    margin: 0 12px;
-  }
-
-  @media (max-width: 991px) {
-    display: none;
-  }
 `;
 
 export default About;
