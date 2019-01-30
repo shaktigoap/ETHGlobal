@@ -2,18 +2,18 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'SEO description here',
-  title: 'Title | Here',
-  url: 'http://site.com',
+  description: 'Description',
+  title: 'ETHGlobal',
+  url: 'http://ethglobal.co',
   author: 'team',
-  keywords: ['gatsby', 'site'],
+  keywords: ['ethereum', 'global'],
   twitter: {
     id: '@twitterid',
-    img: 'http://site.com/img/twitter.png',
+    img: 'http://ethglobal.co/img/seo.png',
   },
   facebook: {
     id: '2342342',
-    img: 'http://site.com/img/facebook-og.png',
+    img: 'http://ethglobal.co/img/seo.png',
   },
 };
 
