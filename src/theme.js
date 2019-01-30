@@ -1,4 +1,4 @@
-export const theme = {
+const theme = {
   font: {
     primary: `'Now', Arial, san-serif`,
     secondary: `'Muli', sans-serif`,
@@ -43,3 +43,5 @@ export const theme = {
     regular: '0px 4px 15px 0px rgba(1,9,62,0.2)',
   },
 };
+
+export default theme;
