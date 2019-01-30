@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { FONT, FONT_SIZE, COLOR } from 'constants';
 
 import fontFiles from './fonts';
 
@@ -25,29 +24,29 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: ${FONT.secondary};
-    ${FONT_SIZE.regular};
-    color: ${COLOR.blue_dark.regular}
+    font-family: ${props => props.theme.font.secondary};
+    ${props => props.theme.font_size.regular};
+    color: ${props => props.theme.color.blue_dark.regular}
   }
 
   h1, h2, h3, h4 {
-    font-family: ${FONT.primary};
-    color: ${COLOR.blue_dark.regular};
+    font-family: ${props => props.theme.font.primary};
+    color: ${props => props.theme.color.blue_dark.regular};
     font-weight: 700;
     margin: 0;
   }
 
   h1 {
-    ${FONT_SIZE.xxlarge};
+    ${props => props.theme.font_size.xxlarge};
   }
   h2 {
-    ${FONT_SIZE.xlarge};
+    ${props => props.theme.font_size.xlarge};
   }
   h3 {
-    ${FONT_SIZE.large};
+    ${props => props.theme.font_size.large};
   }
   h4 {
-    ${FONT_SIZE.small};
+    ${props => props.theme.font_size.small};
   }
 
   p {
@@ -56,7 +55,7 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${COLOR.blue.regular};
+    color: ${props => props.theme.color.blue.regular};
 
     &:hover {
       text-decoration: underline;

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Container } from 'components/global';
-import { COLOR, FONT, FONT_SIZE } from 'constants';
 
 import EthGlobalLogo from 'static/icons/ETHGlobal.svg';
 
@@ -38,14 +37,14 @@ const Centered = styled.div`
   align-items: center;
 
   p {
-    color: ${COLOR.white.light};
+    color: ${props => props.theme.color.white.light};
     margin: 16px 0;
   }
 
   a {
-    color: ${COLOR.white.regular};
-    font: ${FONT.primary};
-    ${FONT_SIZE.large};
+    color: ${props => props.theme.color.white.regular};
+    font: ${props => props.theme.font.primary};
+    ${props => props.theme.font_size.large};
   }
 `;
 
@@ -66,8 +65,8 @@ const Copyright = styled.div`
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
-  color: ${COLOR.white.light};
-  ${FONT_SIZE.xxsmall};
+  color: ${props => props.theme.color.white.light};
+  ${props => props.theme.font_size.xxsmall};
 
   span {
     margin: 8px 0;

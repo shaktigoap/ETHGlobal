@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { COLOR, FONT_SIZE, SHADOW } from 'constants';
 import { Card, Button } from 'components/global';
 import ExternalLink from 'common/ExternalLink';
 
@@ -23,7 +22,7 @@ export const Avatar = styled.div`
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  border: 3px solid ${COLOR.white.regular};
+  border: 3px solid ${props => props.theme.color.white.regular};
   z-index: 1;
   margin-top: -45px;
   margin-bottom: 16px;
@@ -34,8 +33,8 @@ export const Avatar = styled.div`
 `;
 
 export const Subtitle = styled.div`
-  ${FONT_SIZE.xxsmall};
-  color: ${COLOR.blue_dark.light};
+  ${props => props.theme.font_size.xxsmall};
+  color: ${props => props.theme.color.blue_dark.light};
   margin-top: 4px;
   margin-bottom: 16px;
 `;
@@ -64,7 +63,7 @@ export const CardContainer = styled(Card)`
     !props.inactive &&
     `
     &:hover {
-      box-shadow: ${SHADOW.regular};
+      box-shadow: ${props => props.theme.shadow.regular};
       
       ${Cover} {
         height: 120px;

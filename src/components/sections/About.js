@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import { Section, Container } from 'components/global';
 import ExternalLink from 'common/ExternalLink';
-import { COLOR } from 'constants';
+
+import theme from '../../theme';
 
 import GithubIcon from 'static/icons/Github.svg';
 import MediumIcon from 'static/icons/Medium.svg';
@@ -30,7 +31,7 @@ const SOCIAL_LINKS = [
 const About = props => (
   <Section id="about" {...props}>
     <Container>
-      <h3 style={{ color: COLOR.blue.regular }}>About us</h3>
+      <h3 style={{ color: theme.color.blue.regular }}>About us</h3>
       <HeadingContainer>
         <h1>Building our decentralized future</h1>
         <Icons>

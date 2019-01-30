@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import { Section, Container } from 'components/global';
 import EventCard from 'common/EventCard';
-import { COLOR } from 'constants';
+
+import theme from '../../theme';
 
 import ETHParisIcon from 'static/icons/ETHParis.svg';
 
@@ -35,7 +36,7 @@ const UPCOMING_EVENTS = [
 ];
 
 const Events = props => (
-  <Section id="events" {...props} background={COLOR.blue.xlight}>
+  <Section id="events" {...props} background={theme.color.blue.xlight}>
     <Container fluid>
       <HeadingContainer>
         <h3>Events</h3>
@@ -64,7 +65,7 @@ const HeadingContainer = styled.div`
   margin-top: 16px;
 
   > h3 {
-    color: ${COLOR.blue.regular};
+    color: ${props => props.theme.color.blue.regular};
   }
 
   > h2 {

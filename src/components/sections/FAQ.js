@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLOR } from 'constants';
+import theme from '../../theme';
+
 import { Section, Container } from 'components/global';
 
 import FAQItem from 'common/FAQ';
@@ -31,7 +32,7 @@ const FAQS = [
 ];
 
 const FAQ = props => (
-  <Section id="faq" {...props} background={COLOR.blue.xlight}>
+  <Section id="faq" {...props} background={theme.color.blue.xlight}>
     <Container>
       <h2 style={{ textAlign: 'center' }}>FAQs</h2>
       <FaqsContainer>

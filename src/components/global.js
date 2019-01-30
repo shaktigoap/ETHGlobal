@@ -1,25 +1,23 @@
 import styled from 'styled-components';
 
-import { SCREEN, COLOR, FONT_SIZE, FONT, SHADOW } from 'constants';
-
 export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 
-  @media (min-width: ${SCREEN.xs}) {
+  @media (min-width: ${props => props.theme.screen.xs}) {
     max-width: 540px;
   }
 
-  @media (min-width: ${SCREEN.sm}) {
+  @media (min-width: ${props => props.theme.screen.sm}) {
     max-width: 720px;
   }
 
-  @media (min-width: ${SCREEN.md}) {
+  @media (min-width: ${props => props.theme.screen.md}) {
     max-width: 960px;
   }
 
-  @media (min-width: ${SCREEN.lg}) {
+  @media (min-width: ${props => props.theme.screen.lg}) {
     max-width: 1200px;
   }
 
@@ -45,17 +43,17 @@ export const Button = styled.button`
   height: 54px;
   padding: 0 32px;
   border-radius: 27px;
-  background-color: ${COLOR.blue.regular};
-  color: ${COLOR.white.regular};
+  background-color: ${props => props.theme.color.blue.regular};
+  color: ${props => props.theme.color.white.regular};
 
-  font-family: ${FONT.primary};
+  font-family: ${props => props.theme.font.primary};
   font-weight: bold;
-  ${FONT_SIZE.small};
+  ${props => props.theme.font_size.small};
 
   ${props =>
     props.small &&
     `
-    ${FONT_SIZE.xsmall};
+    ${props => props.theme.font_size.xsmall};
     height: 44px;
     border-radius: 22px;
     padding: 0 24px;
@@ -64,15 +62,16 @@ export const Button = styled.button`
   ${props => props.stretch && `width: 100%;`};
 
   &:active {
-    background-color: ${COLOR.blue_dark.regular};
+    background-color: ${props => props.theme.color.blue_dark.regular};
   }
 `;
 
 export const Card = styled.div`
   padding: ${props => (props.small ? '24px' : '40px')};
-  background-color: ${COLOR.white.regular};
+  background-color: ${props => props.theme.color.white.regular};
   border-radius: 10px;
-  box-shadow: ${props => (props.noShadow ? 'none' : SHADOW.light)};
+  box-shadow: ${props =>
+    props.noShadow ? 'none' : props => props.theme.shadow.light};
 `;
 
 export const Pill = styled.div`
@@ -85,27 +84,27 @@ export const Pill = styled.div`
 
   text-transform: uppercase;
   font-weight: bold;
-  font-family: ${FONT.primary};
-  ${FONT_SIZE.xxsmall};
+  font-family: ${props => props.theme.font.primary};
+  ${props => props.theme.font_size.xxsmall};
   letter-spacing: 1px;
 
   ${props => {
     switch (props.appearance) {
       case 'alert':
         return `
-          background-color: ${COLOR.red.light};
-          color: ${COLOR.red.regular};
+          background-color: ${props.theme.color.red.light};
+          color: ${props.theme.color.red.regular};
         `;
       case 'secondary':
         return `
-          background-color: ${COLOR.blue_dark.xlight};
-          color: ${COLOR.blue_dark.light};
+          background-color: ${props.theme.color.blue_dark.xlight};
+          color: ${props.theme.color.blue_dark.light};
         `;
       case 'primary':
       default:
         return `
-          background-color: ${COLOR.blue.light};
-          color: ${COLOR.blue.regular};
+          background-color: ${props.theme.color.blue.light};
+          color: ${props.theme.color.blue.regular};
         `;
     }
   }}
@@ -120,16 +119,16 @@ export const Input = styled.input`
   padding: 0 24px;
   border: 2px solid transparent;
   width: 100%;
-  background-color: ${COLOR.blue.xlight};
-  color: ${COLOR.blue_dark.regular};
-  ${FONT_SIZE.small};
+  background-color: ${props => props.theme.color.blue.xlight};
+  color: ${props => props.theme.color.blue_dark.regular};
+  ${props => props.theme.font_size.small};
 
   &:placeholder {
-    color: ${COLOR.blue_dark.light};
+    color: ${props => props.theme.color.blue_dark.light};
   }
 
   &:focus {
-    border: 2px solid ${COLOR.blue.light};
+    border: 2px solid ${props => props.theme.color.blue.light};
   }
 `;
 

@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
-import { COLOR, SHADOW, FONT, FONT_SIZE } from 'constants';
-
 export const Wrapper = styled.div`
   .faq {
     border-radius: 5px;
-    background-color: ${COLOR.white.regular};
-    box-shadow: ${SHADOW.regular};
+    background-color: ${props => props.theme.color.white.regular};
+    box-shadow: ${props => props.theme.shadow.regular};
     transition: box-shadow 0.3s ease-out;
 
     &.active {
-      box-shadow: ${SHADOW.light};
+      box-shadow: ${props => props.theme.shadow.light};
     }
   }
 
@@ -22,13 +20,13 @@ export const Wrapper = styled.div`
     width: 100%;
     text-align: left;
 
-    font-family: ${FONT.primary};
+    font-family: ${props => props.theme.font.primary};
     padding: 32px;
     padding-right: 72px;
     font-weight: 500;
     position: relative;
-    ${FONT_SIZE.regular};
-    color: ${COLOR.blue_dark.regular};
+    ${props => props.theme.font_size.regular};
+    color: ${props => props.theme.color.blue_dark.regular};
 
     &::after {
       content: '+';
@@ -50,6 +48,6 @@ export const Wrapper = styled.div`
   .faq-content {
     padding: 32px;
     padding-top: 0;
-    ${FONT_SIZE.small};
+    ${props => props.theme.font_size.small};
   }
 `;
