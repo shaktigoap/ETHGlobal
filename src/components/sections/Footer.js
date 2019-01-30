@@ -35,6 +35,7 @@ const Centered = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
   p {
     color: ${props => props.theme.color.white.light};

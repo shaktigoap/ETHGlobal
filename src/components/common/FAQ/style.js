@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+
   .faq {
     border-radius: 5px;
     background-color: ${props => props.theme.color.white.regular};
@@ -19,6 +23,7 @@ export const Wrapper = styled.div`
     outline: none;
     width: 100%;
     text-align: left;
+    cursor: pointer;
 
     font-family: ${props => props.theme.font.primary};
     padding: 32px;
