@@ -1,41 +1,77 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import theme from '../../theme';
 
 import { Section, Container } from 'components/global';
 import ExternalLink from 'common/ExternalLink';
 
+// To add a team member:
+// - Add details to the array below
+// - Add his profile image to src/images/team
+// - Make sure it is named as per his 'name' field
+//   Lowercase, spaces replaced with underscores
+//   ex: Christian Bale -> christian_bale
 const TEAM = [
   {
     name: 'Christian Bale',
     title: 'Software Engineer',
     href: 'https://twitter.com/TheOfficialBale',
-    avatar: 'https://twitter-avatar.now.sh/TheOfficialBale',
   },
   {
     name: 'Batman',
     title: 'Software Engineer',
     href: 'https://twitter.com/TheOfficialBale',
-    avatar: 'https://twitter-avatar.now.sh/TheOfficialBale',
   },
 ];
 
 const Team = props => (
-  <Section id="Team" {...props} background={theme.color.blue.xlight}>
-    <Container>
-      <h2 style={{ textAlign: 'center' }}>Team</h2>
-      <Grid>
-        {TEAM.map(({ name, title, href, avatar }) => (
-          <StyledLink href={href}>
-            <Avatar src={avatar} alt={name} />
-            <Title>{name}</Title>
-            <Subtitle>{title}</Subtitle>
-          </StyledLink>
-        ))}
-      </Grid>
-    </Container>
-  </Section>
+  <StaticQuery
+    query={graphql`
+      fragment squareImage on File {
+        childImageSharp {
+          fluid(maxWidth: 100, maxHeight: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      query {
+        allFile(filter: { sourceInstanceName: { eq: "team" } }) {
+          edges {
+            node {
+              name
+              ...squareImage
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Section id="Team" {...props} background={theme.color.blue.xlight}>
+        <Container>
+          <h2 style={{ textAlign: 'center' }}>Team</h2>
+          <Grid>
+            {TEAM.map(({ name, title, href }) => {
+              const avatarImg = data.allFile.edges.find(
+                ({ node }) => node.name === name.replace(' ', '_').toLowerCase()
+              ).node;
+
+              return (
+                <StyledLink href={href}>
+                  <Avatar fluid={avatarImg.childImageSharp.fluid} alt={name} />
+                  <Title>{name}</Title>
+                  <Subtitle>{title}</Subtitle>
+                </StyledLink>
+              );
+            })}
+          </Grid>
+        </Container>
+      </Section>
+    )}
+  />
 );
 
 const Grid = styled.div`
@@ -56,7 +92,7 @@ const StyledLink = styled(ExternalLink)`
   align-items: center;
 `;
 
-const Avatar = styled.img`
+const Avatar = styled(Img)`
   height: 100px;
   width: 100px;
   border-radius: 50%;

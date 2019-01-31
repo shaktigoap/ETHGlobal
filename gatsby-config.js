@@ -11,6 +11,13 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-svgr`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `team`,
+        path: `${__dirname}/src/images/team`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
