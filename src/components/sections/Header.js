@@ -16,7 +16,7 @@ const Header = props => (
           </>
         ) : (
           <ImageWrapper>
-            <img src={HeroImage} alt="Hero" />
+            <DesktopImage src={HeroImage} alt="Hero" />
             <LogoContainer>
               <img src={EthGlobalLogo} alt="ETHGlobal" />
               <p>
@@ -31,27 +31,34 @@ const Header = props => (
 );
 
 const ImageWrapper = styled.div`
-  margin-bottom: -22vw;
+  margin-bottom: -400px;
   position: relative;
+`;
 
-  img {
-    width: 100%;
-    z-index: -1;
-  }
+const DesktopImage = styled.img`
+  width: 100%;
+  min-width: 1920px;
+  margin-left: 50%;
+  transform: translateX(-50%);
 `;
 
 const LogoContainer = styled.div`
   position: absolute;
-  width: 16%;
+  width: 320px;
   top: 24%;
-  left: 42%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+  img {
+    width: 100%;
+  }
 
   p {
     margin-top: 16px;
     text-align: center;
-    font-size: 80%;
-    line-height: 160%;
     opacity: 0.6;
+    font-size: 18px;
+    line-height: 30px;
   }
 `;
 
