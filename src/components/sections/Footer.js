@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Container } from 'components/global';
 import SocialIcons from 'common/SocialIcons';
+import ExternalLink from 'common/ExternalLink';
 
 import EthGlobalLogo from 'static/icons/ETHGlobal.svg';
 
@@ -22,7 +23,12 @@ const Footer = props => (
       </Centered>
       <Copyright>
         <span>© ETHGLOBAL 2018. ALL RIGHTS RESERVED.</span>
-        <span>Designed by ETHDesign &amp; ETHINDIA</span>
+        <span>
+          Made with ❤ by{' '}
+          <ExternalLink href="http://ethdesign.co/">ETHDesign</ExternalLink>{' '}
+          &amp;{' '}
+          <ExternalLink href="https://devfolio.co/">Devfolio</ExternalLink>
+        </span>
       </Copyright>
     </Container>
   </FooterWrapper>
@@ -73,6 +79,15 @@ const Copyright = styled.div`
 
   span {
     margin: 8px 0;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.6);
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      text-decoration: none;
+    }
   }
 
   @media (max-width: 767px) {
