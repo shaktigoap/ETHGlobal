@@ -11,12 +11,12 @@ const Header = props => (
     <Media query="(max-width: 991px)">
       {matches =>
         matches ? (
-          <>
-            <img src={HeroMobileImage} alt="Hero" />
-          </>
+          <div style={{ overflow: 'hidden' }}>
+            <FullWidthImage width={991} src={HeroMobileImage} alt="Hero" />
+          </div>
         ) : (
           <ImageWrapper>
-            <DesktopImage src={HeroImage} alt="Hero" />
+            <FullWidthImage width={1920} src={HeroImage} alt="Hero" />
             <LogoContainer>
               <img src={EthGlobalLogo} alt="ETHGlobal" />
               <p>
@@ -33,11 +33,12 @@ const Header = props => (
 const ImageWrapper = styled.div`
   margin-bottom: -400px;
   position: relative;
+  overflow: hidden;
 `;
 
-const DesktopImage = styled.img`
+const FullWidthImage = styled.img`
   width: 100%;
-  min-width: 1920px;
+  min-width: ${props => props.width}px;
   margin-left: 50%;
   transform: translateX(-50%);
 `;
