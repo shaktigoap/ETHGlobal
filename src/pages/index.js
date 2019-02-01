@@ -4,6 +4,7 @@ import Layout from 'common/Layout';
 import Header from 'components/sections/Header';
 import About from 'components/sections/About';
 import Events from 'components/sections/Events';
+import Highlights from 'components/sections/Highlights';
 import Partners from 'components/sections/Partners';
 import Sponsors from 'components/sections/Sponsors';
 import Team from 'components/sections/Team';
@@ -25,7 +26,8 @@ const IndexPage = () => (
     <FloatingContainer>
       <NewsletterForm style={{ marginTop: -200 }} />
     </FloatingContainer>
-    <Partners style={{ paddingTop: 296 }} />
+    <Highlights style={{ paddingTop: 296 }}/>
+    <Partners />
     <Sponsors />
     <Team />
     <FAQ />

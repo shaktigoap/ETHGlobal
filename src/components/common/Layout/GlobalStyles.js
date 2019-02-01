@@ -29,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${props => props.theme.color.blue_dark.regular}
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3 {
     font-family: ${props => props.theme.font.primary};
     color: ${props => props.theme.color.blue_dark.regular};
     font-weight: 700;
@@ -46,6 +46,7 @@ export const GlobalStyles = createGlobalStyle`
     ${props => props.theme.font_size.large};
   }
   h4 {
+    font-family: ${props => props.theme.font.secondary};
     ${props => props.theme.font_size.small};
   }
 
