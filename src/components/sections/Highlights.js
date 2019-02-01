@@ -87,6 +87,7 @@ class Highlights extends Component {
               <Video onClick={() => this.handleVideoThumbClick(url)}>
                 <img src={image} alt={title} />
                 <Overlay>
+                  <PlayIcon />
                   <VideoDetails
                     title={title}
                     duration={duration}
@@ -102,6 +103,7 @@ class Highlights extends Component {
               <div>
                 <Video small onClick={() => this.handleVideoThumbClick(url)}>
                   <img src={image} alt={title} />
+                  <PlayIcon />
                 </Video>
                 <VideoDetails
                   title={title}
@@ -190,6 +192,26 @@ const Details = styled.div`
   `};
 `;
 
+const PlayIcon = styled.div`
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  position: relative;
+  background-color: #fff;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 23px;
+    left: 27px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid #040202;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+`;
+
 const Video = styled.div`
   overflow: hidden;
   position: relative;
@@ -211,12 +233,34 @@ const Video = styled.div`
       rgba(38, 37, 90, 0.8) 100%
     );
   }
+
+  ${props =>
+    props.small &&
+    `
+    > ${PlayIcon} {
+      position: absolute;
+      top: 64px;
+      left: 92px;
+      opacity: 0;
+      transition: opacity 0.1s ease-in;
+    }
+
+    &:hover {
+      > ${PlayIcon} {
+        opacity: 1;
+      }
+    }
+  `};
 `;
 
 const Overlay = styled.div`
   position: absolute;
   left: 32px;
   bottom: 32px;
+
+  > ${PlayIcon} {
+    margin-bottom: 16px;
+  }
 `;
 
 const Recent = styled.div`
