@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+
+import VideoModal from 'common/VideoModal';
 
 import { Section, Container } from 'components/global';
 
@@ -8,13 +10,15 @@ const FEATURED = [
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
+    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
     image: 'https://picsum.photos/768/384',
   },
   {
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
-    image: 'https://picsum.photos/768/384',
+    url: 'https://www.youtube.com/watch?v=lyu7v7nWzfo',
+    image: 'https://picsum.photos/768/400',
   },
 ];
 
@@ -23,69 +27,96 @@ const RECENT = [
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
-    image: 'https://picsum.photos/768/384',
+    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
+    image: 'https://picsum.photos/768/401',
   },
   {
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
-    image: 'https://picsum.photos/768/384',
+    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
+    image: 'https://picsum.photos/768/402',
   },
   {
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
-    image: 'https://picsum.photos/768/384',
+    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
+    image: 'https://picsum.photos/768/403',
   },
   {
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
-    image: 'https://picsum.photos/768/384',
+    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
+    image: 'https://picsum.photos/768/404',
   },
 ];
 
-const Highlights = props => (
-  <Section id="highlights" {...props} background="#1F294F">
-    <Container fluid>
-      <Heading>
-        <h2>Get the highlights</h2>
-        <p>Check out panels, workshops and more from our past events.</p>
-      </Heading>
-      <H4>Featured</H4>
-      <Featured>
-        {FEATURED.map(({ title, duration, location, image }) => (
-          <Video>
-            <img src={image} alt={title} />
-            <Overlay>
-              <VideoDetails
-                title={title}
-                duration={duration}
-                location={location}
-              />
-            </Overlay>
-          </Video>
-        ))}
-      </Featured>
-      <H4>RECENT</H4>
-      <Recent num={RECENT.length}>
-        {RECENT.map(({ title, duration, location, image }) => (
-          <div>
-            <Video small>
-              <img src={image} alt={title} />
-            </Video>
-            <VideoDetails
-              title={title}
-              duration={duration}
-              location={location}
-              small
-            />
-          </div>
-        ))}
-      </Recent>
-    </Container>
-  </Section>
-);
+class Highlights extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false,
+      previewVideoUrl: '',
+    };
+  }
+
+  handleVideoThumbClick = url =>
+    this.setState({ modalOpen: true, previewVideoUrl: url });
+
+  handleModalClose = () => this.setState({ modalOpen: false });
+
+  render() {
+    const { modalOpen, previewVideoUrl } = this.state;
+    return (
+      <Section id="highlights" {...this.props} background="#1F294F">
+        <VideoModal
+          url={previewVideoUrl}
+          modalOpen={modalOpen}
+          handleClose={this.handleModalClose}
+        />
+        <Container fluid>
+          <Heading>
+            <h2>Get the highlights</h2>
+            <p>Check out panels, workshops and more from our past events.</p>
+          </Heading>
+          <H4>Featured</H4>
+          <Featured>
+            {FEATURED.map(({ title, duration, location, url, image }) => (
+              <Video onClick={() => this.handleVideoThumbClick(url)}>
+                <img src={image} alt={title} />
+                <Overlay>
+                  <VideoDetails
+                    title={title}
+                    duration={duration}
+                    location={location}
+                  />
+                </Overlay>
+              </Video>
+            ))}
+          </Featured>
+          <H4>RECENT</H4>
+          <Recent num={RECENT.length}>
+            {RECENT.map(({ title, duration, location, url, image }) => (
+              <div>
+                <Video small onClick={() => this.handleVideoThumbClick(url)}>
+                  <img src={image} alt={title} />
+                </Video>
+                <VideoDetails
+                  title={title}
+                  duration={duration}
+                  location={location}
+                  small
+                />
+              </div>
+            ))}
+          </Recent>
+        </Container>
+      </Section>
+    );
+  }
+}
 
 const VideoDetails = ({ small, title, duration, location }) => (
   <Details small={small}>

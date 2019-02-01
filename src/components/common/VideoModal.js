@@ -26,10 +26,10 @@ const modalStyle = {
   },
 };
 
-const VideoModal = ({ url, visible = false, handleOnClose, ...other }) => (
+const VideoModal = ({ url, modalOpen = false, handleClose, ...other }) => (
   <Modal
-    isOpen={visible}
-    onRequestClose={handleOnClose}
+    isOpen={modalOpen}
+    onRequestClose={handleClose}
     shouldcloseOnEsc={true}
     contentLabel="Youtube Preview"
     style={modalStyle}
@@ -44,6 +44,7 @@ const VideoModal = ({ url, visible = false, handleOnClose, ...other }) => (
         height="100%"
       />
     </PlayerWrapper>
+    Loading
   </Modal>
 );
 
