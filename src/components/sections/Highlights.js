@@ -198,6 +198,7 @@ const PlayIcon = styled.div`
   border-radius: 50%;
   position: relative;
   background-color: #fff;
+  z-index: 2;
 
   &::after {
     content: '';
@@ -209,6 +210,17 @@ const PlayIcon = styled.div`
     border-left: 12px solid #040202;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
+  }
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  z-index: 2;
+
+  > ${PlayIcon} {
+    margin-bottom: 16px;
   }
 `;
 
@@ -232,6 +244,24 @@ const Video = styled.div`
       rgba(38, 37, 90, 0) 0%,
       rgba(38, 37, 90, 0.8) 100%
     );
+    z-index: 1;
+  }
+
+  > img,
+  > ${Overlay} {
+    transition: transform 0.3s cubic-bezier(0.09, 0.33, 0.46, 1);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    > img {
+      transform: scale(1.05);
+    }
+
+    > ${Overlay} {
+      transform: scale(0.95);
+    }
   }
 
   ${props =>
@@ -251,16 +281,6 @@ const Video = styled.div`
       }
     }
   `};
-`;
-
-const Overlay = styled.div`
-  position: absolute;
-  left: 32px;
-  bottom: 32px;
-
-  > ${PlayIcon} {
-    margin-bottom: 16px;
-  }
 `;
 
 const Recent = styled.div`

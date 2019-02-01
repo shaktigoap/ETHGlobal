@@ -9,6 +9,7 @@ const modalStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    zIndex: 100,
   },
   content: {
     border: 'none',
@@ -44,7 +45,6 @@ const VideoModal = ({ url, modalOpen = false, handleClose, ...other }) => (
         height="100%"
       />
     </PlayerWrapper>
-    Loading
   </Modal>
 );
 
