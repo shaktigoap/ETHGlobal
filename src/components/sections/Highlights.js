@@ -11,14 +11,12 @@ const FEATURED = [
     duration: '34:00',
     location: 'ETHSingapore',
     url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
-    image: 'https://picsum.photos/768/384',
   },
   {
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
     url: 'https://www.youtube.com/watch?v=lyu7v7nWzfo',
-    image: 'https://picsum.photos/768/400',
   },
 ];
 
@@ -27,29 +25,25 @@ const RECENT = [
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
-    image: 'https://picsum.photos/768/401',
+    url: 'https://www.youtube.com/watch?v=RplnSVTzvnU',
   },
   {
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
     url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
-    image: 'https://picsum.photos/768/402',
   },
   {
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
-    image: 'https://picsum.photos/768/403',
+    url: 'https://www.youtube.com/watch?v=lyu7v7nWzfo',
   },
   {
     title: 'Vitalik at Singapore',
     duration: '34:00',
     location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
-    image: 'https://picsum.photos/768/404',
+    url: 'https://www.youtube.com/watch?v=RplnSVTzvnU',
   },
 ];
 
@@ -66,6 +60,9 @@ class Highlights extends Component {
     this.setState({ modalOpen: true, previewVideoUrl: url });
 
   handleModalClose = () => this.setState({ modalOpen: false });
+
+  getVideoThumb = url =>
+    `https://img.youtube.com/vi/${url.split('v=')[1]}/maxresdefault.jpg`;
 
   render() {
     const { modalOpen, previewVideoUrl } = this.state;
@@ -85,7 +82,7 @@ class Highlights extends Component {
           <Featured>
             {FEATURED.map(({ title, duration, location, url, image }) => (
               <Video onClick={() => this.handleVideoThumbClick(url)}>
-                <img src={image} alt={title} />
+                <img src={this.getVideoThumb(url)} alt={title} />
                 <Overlay>
                   <PlayIcon />
                   <VideoDetails
@@ -102,7 +99,7 @@ class Highlights extends Component {
             {RECENT.map(({ title, duration, location, url, image }) => (
               <div>
                 <Video small onClick={() => this.handleVideoThumbClick(url)}>
-                  <img src={image} alt={title} />
+                  <img src={this.getVideoThumb(url)} alt={title} />
                   <PlayIcon />
                 </Video>
                 <VideoDetails
@@ -245,6 +242,10 @@ const Video = styled.div`
       rgba(38, 37, 90, 0.8) 100%
     );
     z-index: 1;
+  }
+
+  img {
+    max-height: ${props => (props.small ? 192 : 384)}px;
   }
 
   > img,
