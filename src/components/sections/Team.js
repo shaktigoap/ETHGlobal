@@ -60,7 +60,7 @@ const Team = props => (
       }
     `}
     render={data => (
-      <Section id="Team" {...props} background={theme.color.blue_dark.xlight}>
+      <Section id="Team" {...props} background={theme.color.blue.light}>
         <Container>
           <h2 style={{ textAlign: 'center' }}>Team</h2>
           <Grid>

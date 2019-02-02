@@ -29,7 +29,7 @@ const PARTNERS = [
 ];
 
 const Partners = props => (
-  <Section id="partners" {...props} background={theme.color.blue_dark.xlight}>
+  <Section id="partners" {...props} background={theme.color.blue.xlight}>
     <Container>
       <h2 style={{ textAlign: 'center' }}>Partners</h2>
       <Grid>
