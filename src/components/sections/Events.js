@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 
 import { Section, Container } from 'components/global';
 import EventCard from 'common/EventCard';
@@ -37,6 +38,7 @@ const UPCOMING_EVENTS = [
 
 const Events = props => (
   <Section id="events" {...props} background={theme.color.blue.xlight}>
+    <ReactTooltip place="right" />
     <Container fluid>
       <HeadingContainer>
         <h3>Events</h3>
@@ -44,16 +46,16 @@ const Events = props => (
       </HeadingContainer>
       <CardGrid num={UPCOMING_EVENTS.length}>
         {UPCOMING_EVENTS.map(event => (
-          <EventCard key={event.title} {...event} />
+          <EventCard {...event} />
         ))}
       </CardGrid>
       <h3 style={{ marginTop: 64, textAlign: 'center' }}>Past Events</h3>
       <CardGrid num={UPCOMING_EVENTS.length * 2} scroll>
         {UPCOMING_EVENTS.map(event => (
-          <EventCard key={event.title} {...event} inactive />
+          <EventCard {...event} inactive />
         ))}
         {UPCOMING_EVENTS.map(event => (
-          <EventCard key={event.title} {...event} inactive />
+          <EventCard {...event} inactive />
         ))}
       </CardGrid>
     </Container>

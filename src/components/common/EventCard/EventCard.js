@@ -23,7 +23,7 @@ const EventCard = ({
   ...other
 }) => (
   <LinkWrapper href={href}>
-    <CardContainer inactive={inactive} {...other}>
+    <CardContainer inactive={inactive} data-tip={href} {...other}>
       <Cover color={primaryColor} />
       <CardContent>
         <Avatar color={primaryColor}>
