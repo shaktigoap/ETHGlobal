@@ -19,6 +19,8 @@ const theme = {
       xlight: 'rgba(86,102,246,0.05)',
     },
     blue_dark: {
+      alt: 'rgba(31,41,79,1)',
+      alt_light: 'rgba(31,41,79,0.5)',
       regular: 'rgba(38,37,90,1)',
       light: 'rgba(38,37,90,0.5)',
       xlight: 'rgba(38,37,90,0.1)',

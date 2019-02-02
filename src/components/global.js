@@ -36,6 +36,7 @@ export const Section = styled.section`
 
 export const Button = styled.button`
   outline: none;
+  border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -124,7 +125,7 @@ export const Input = styled.input`
   ${props => props.theme.font_size.small};
 
   &:placeholder {
-    color: ${props => props.theme.color.blue_dark.light};
+    color: ${props => props.theme.color.blue_dark.alt_light};
   }
 
   &:focus {

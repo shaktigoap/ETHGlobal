@@ -26,12 +26,12 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: ${props => props.theme.font.secondary};
     ${props => props.theme.font_size.regular};
-    color: ${props => props.theme.color.blue_dark.regular}
+    color: ${props => props.theme.color.blue_dark.alt};
   }
 
   h1, h2, h3 {
     font-family: ${props => props.theme.font.primary};
-    color: ${props => props.theme.color.blue_dark.regular};
+    color: ${props => props.theme.color.blue_dark.alt};
     font-weight: 700;
     margin: 0;
   }

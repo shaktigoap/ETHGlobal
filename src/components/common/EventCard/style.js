@@ -34,7 +34,7 @@ export const Avatar = styled.div`
 
 export const Subtitle = styled.div`
   ${props => props.theme.font_size.xxsmall};
-  color: ${props => props.theme.color.blue_dark.light};
+  color: ${props => props.theme.color.blue_dark.alt_light};
   margin-top: 4px;
   margin-bottom: 16px;
 `;

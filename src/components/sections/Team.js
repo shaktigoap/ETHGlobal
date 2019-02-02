@@ -110,7 +110,7 @@ const Title = styled.div`
 
 const Subtitle = styled.div`
   ${props => props.theme.font_size.xxsmall};
-  color: ${props => props.theme.color.blue_dark.light};
+  color: ${props => props.theme.color.blue_dark.alt_light};
 `;
 
 export default Team;
