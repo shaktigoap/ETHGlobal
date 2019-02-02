@@ -28,8 +28,8 @@ const PARTNERS = [
   },
 ];
 
-const Sponsors = props => (
-  <Section id="sponsors" {...props} background={theme.color.blue.light}>
+const Partners = props => (
+  <Section id="partners" {...props} background={theme.color.blue_dark.xlight}>
     <Container>
       <h2 style={{ textAlign: 'center' }}>Partners</h2>
       <Grid>
@@ -73,4 +73,4 @@ const ImgCard = styled(Card)`
   }
 `;
 
-export default Sponsors;
+export default Partners;

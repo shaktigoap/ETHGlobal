@@ -40,7 +40,7 @@ const FAQS = [
 ];
 
 const FAQ = props => (
-  <Section id="faq" {...props}>
+  <Section id="faq" {...props} background="rgba(86,102,246,0.05)">
     <Container>
       <h2 style={{ textAlign: 'center' }}>FAQs</h2>
       <FaqsContainer>
