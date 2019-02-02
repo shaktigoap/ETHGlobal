@@ -55,9 +55,11 @@ export const LinkWrapper = styled(ExternalLink)`
 
 export const CardContainer = styled(Card)`
   padding: 0;
+  border: 2px solid #fff;
   overflow: hidden;
   height: 380px;
-  transition: all 0.3s ease-out;
+  transition: height, opacity 0.3s ease-out, transform 0.2s ease-out;
+  opacity: ${props => (props.inactive ? 0.7 : 1)};
 
   ${props =>
     !props.inactive &&
@@ -84,6 +86,7 @@ export const CardContainer = styled(Card)`
   `};
 
   &:hover {
-    transform: scale(0.96);
+    transform: scale(0.98);
+    opacity: 1;
   }
 `;
