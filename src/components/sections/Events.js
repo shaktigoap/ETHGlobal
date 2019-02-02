@@ -48,7 +48,7 @@ const Events = props => (
         ))}
       </CardGrid>
       <h3 style={{ marginTop: 64, textAlign: 'center' }}>Past Events</h3>
-      <CardGrid num={UPCOMING_EVENTS.length * 2}>
+      <CardGrid num={UPCOMING_EVENTS.length * 2} scroll>
         {UPCOMING_EVENTS.map(event => (
           <EventCard key={event.title} {...event} inactive />
         ))}
@@ -80,13 +80,15 @@ const CardGrid = styled.div`
   justify-content: center;
   grid-gap: 24px;
 
-  @media (max-width: 991px) {
+  ${props =>
+    props.scroll &&
+    `
     padding: 0 32px;
     padding-bottom: 24px;
-    grid-template-columns: ${props => `repeat(${props.num}, 256px)`};
+    grid-template-columns: ${`repeat(${props.num}, 256px)`};
     overflow-x: scroll;
     justify-content: start;
-  }
+  `};
 `;
 
 export default Events;
