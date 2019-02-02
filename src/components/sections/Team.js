@@ -22,6 +22,16 @@ const TEAM = [
   },
   {
     name: 'Batman',
+    title: 'Chief Scientist',
+    href: 'https://twitter.com/TheOfficialBale',
+  },
+  {
+    name: 'Christian Bale',
+    title: 'Chief Scientist',
+    href: 'https://twitter.com/TheOfficialBale',
+  },
+  {
+    name: 'Batman',
     title: 'Software Engineer',
     href: 'https://twitter.com/TheOfficialBale',
   },
