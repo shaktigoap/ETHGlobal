@@ -18,15 +18,15 @@ import NewsletterForm from 'common/NewsletterForm';
 const IndexPage = () => (
   <Layout>
     <Header />
-    <About style={{ paddingBottom: 160, position: 'relative' }} />
+    <About style={{ paddingBottom: 174, position: 'relative' }} />
     <FloatingContainer>
       <AlertCard style={{ marginTop: -80 }} />
     </FloatingContainer>
-    <Events style={{ paddingTop: 144, paddingBottom: 296 }} />
+    <Events style={{ paddingTop: 158, paddingBottom: 310 }} />
     <FloatingContainer>
-      <NewsletterForm style={{ marginTop: -200 }} />
+      <NewsletterForm style={{ marginTop: -214 }} />
     </FloatingContainer>
-    <Highlights style={{ paddingTop: 296 }}/>
+    <Highlights style={{ paddingTop: 310 }} />
     <Partners />
     <Sponsors />
     <Team />
