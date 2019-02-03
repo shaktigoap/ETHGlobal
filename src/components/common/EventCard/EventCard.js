@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'gatsby-image';
 
 import { Pill } from 'components/global';
 
@@ -14,7 +15,7 @@ import {
 
 const EventCard = ({
   primaryColor,
-  icon,
+  avatar,
   title,
   location,
   dates,
@@ -26,9 +27,7 @@ const EventCard = ({
     <CardContainer inactive={inactive} data-tip={href} {...other}>
       <Cover color={primaryColor} />
       <CardContent>
-        <Avatar color={primaryColor}>
-          <img src={icon} alt={title + 'logo'} />
-        </Avatar>
+        <Avatar as={Img} fluid={avatar} alt={title + 'logo'} />
         <h3>{title}</h3>
         <Subtitle>{location}</Subtitle>
         <Pill stretch appearance={inactive ? 'secondary' : 'primary'}>

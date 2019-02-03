@@ -17,7 +17,7 @@ export const CardContent = styled.div`
   align-items: center;
 `;
 
-export const Avatar = styled.div`
+export const Avatar = styled.img`
   box-sizing: border-box;
   width: 90px;
   height: 90px;
@@ -29,7 +29,6 @@ export const Avatar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.color};
 `;
 
 export const Subtitle = styled.div`
