@@ -8,32 +8,36 @@ import EthGlobalLogo from 'static/logos/ETHGlobal.svg';
 
 const Header = props => (
   <header {...props}>
-    <Media query="(max-width: 991px)">
-      {matches =>
-        matches ? (
-          <div style={{ overflow: 'hidden' }}>
-            <FullWidthImage width={991} src={HeroMobileImage} alt="Hero" />
-          </div>
-        ) : (
-          <ImageWrapper>
-            <FullWidthImage width={1920} src={HeroImage} alt="Hero" />
-            <LogoContainer>
-              <img src={EthGlobalLogo} alt="ETHGlobal" />
-              <p>
-                Onboarding thousands of developers into the Ethereum ecosystem
-              </p>
-            </LogoContainer>
-          </ImageWrapper>
-        )
-      }
-    </Media>
+    <MobileImageWrapper style={{ overflow: 'hidden' }}>
+      <FullWidthImage width={991} src={HeroMobileImage} alt="Hero" />
+    </MobileImageWrapper>
+    <ImageWrapper>
+      <FullWidthImage width={1920} src={HeroImage} alt="Hero" />
+      <LogoContainer>
+        <img src={EthGlobalLogo} alt="ETHGlobal" />
+        <p>Onboarding thousands of developers into the Ethereum ecosystem</p>
+      </LogoContainer>
+    </ImageWrapper>
   </header>
 );
+
+const MobileImageWrapper = styled.div`
+  overflow: hidden;
+  display: none;
+
+  @media (max-width: 991px) {
+    display: block;
+  }
+`;
 
 const ImageWrapper = styled.div`
   margin-bottom: -400px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 991px) {
+    display: none;
+  }
 `;
 
 const FullWidthImage = styled.img`
