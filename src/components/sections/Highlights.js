@@ -159,7 +159,6 @@ const H4 = styled.h4`
   display: flex;
   align-items: center;
   margin-top: 48px;
-  margin-left: 24px;
 
   &::before {
     content: '';
@@ -174,8 +173,6 @@ const Featured = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 24px;
-  padding-right: 24px;
-  padding-left: 24px;
 `;
 
 const Details = styled.div`
@@ -239,7 +236,7 @@ const Video = styled.div`
   border-radius: 10px;
   border: 1px solid rgba(132, 142, 174, 0.5);
   max-height: ${props => (props.small ? 192 : 384)}px;
-  ${props => props.small && `width: 256px`};
+  ${props => props.small && `width: 260px`};
 
   &::before {
     content: '';
@@ -301,8 +298,7 @@ const Recent = styled.div`
   grid-template-columns: ${props => `repeat(${props.num},256px)}`};
   grid-gap: 24px;
   overflow-x: scroll;
-  padding: 24px;
-  padding-top: 0;
+  padding-bottom: 24px;
 `;
 
 export default Highlights;
