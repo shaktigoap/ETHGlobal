@@ -12,7 +12,7 @@ import FAQ from 'components/sections/FAQ';
 import Footer from 'components/sections/Footer';
 
 import { FloatingContainer } from 'components/global';
-import AlertCard from 'common/AlertCard';
+import AnnoucementCard from 'common/AnnoucementCard';
 import NewsletterForm from 'common/NewsletterForm';
 
 const IndexPage = () => (
@@ -20,7 +20,7 @@ const IndexPage = () => (
     <Header />
     <About style={{ paddingBottom: 174, position: 'relative' }} />
     <FloatingContainer>
-      <AlertCard style={{ marginTop: -80 }} />
+      <AnnoucementCard style={{ marginTop: -80 }} />
     </FloatingContainer>
     <Events style={{ paddingTop: 158, paddingBottom: 310 }} />
     <FloatingContainer>
