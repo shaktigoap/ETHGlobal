@@ -45,6 +45,18 @@ const RECENT = [
     location: 'ETHSingapore',
     url: 'https://www.youtube.com/watch?v=RplnSVTzvnU',
   },
+  {
+    title: 'Vitalik at Singapore',
+    duration: '34:00',
+    location: 'ETHSingapore',
+    url: 'https://www.youtube.com/watch?v=lyu7v7nWzfo',
+  },
+  {
+    title: 'Vitalik at Singapore',
+    duration: '34:00',
+    location: 'ETHSingapore',
+    url: 'https://www.youtube.com/watch?v=RplnSVTzvnU',
+  },
 ];
 
 class Highlights extends Component {

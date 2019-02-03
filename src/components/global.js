@@ -54,7 +54,7 @@ export const Button = styled.button`
   ${props =>
     props.small &&
     `
-    ${props => props.theme.font_size.xsmall};
+    ${props.theme.font_size.xsmall};
     height: 44px;
     border-radius: 22px;
     padding: 0 24px;

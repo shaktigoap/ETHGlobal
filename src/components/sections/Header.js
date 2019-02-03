@@ -1,5 +1,4 @@
 import React from 'react';
-import Media from 'react-media';
 import styled from 'styled-components';
 
 import HeroImage from 'static/Hero.svg';
