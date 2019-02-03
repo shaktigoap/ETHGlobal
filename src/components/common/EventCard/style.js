@@ -64,8 +64,6 @@ export const CardContainer = styled(Card)`
     !props.inactive &&
     `
     &:hover {
-      box-shadow: ${props => props.theme.shadow.regular};
-      
       ${Cover} {
         height: 120px;
       }
@@ -85,7 +83,8 @@ export const CardContainer = styled(Card)`
   `};
 
   &:hover {
-    transform: scale(0.98);
+    box-shadow: ${props => props.theme.shadow.large};
+    transform: scale(1.02);
     opacity: 1;
   }
 `;

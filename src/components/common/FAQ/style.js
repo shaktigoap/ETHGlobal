@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     transition: box-shadow 0.3s ease-out;
 
     &.active {
-      box-shadow: ${props => props.theme.shadow.light};
+      box-shadow: ${props => props.theme.shadow.large};
     }
   }
 

@@ -72,7 +72,7 @@ export const Card = styled.div`
   background-color: ${props => props.theme.color.white.regular};
   border-radius: 10px;
   box-shadow: ${props =>
-    props.noShadow ? 'none' : props => props.theme.shadow.light};
+    props.noShadow ? 'none' : props => props.theme.shadow.regular};
 `;
 
 export const Pill = styled.div`
