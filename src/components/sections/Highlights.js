@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import VideoModal from 'common/VideoModal';
-
 import { Section, Container } from 'components/global';
 
 const FEATURED = [
@@ -176,7 +175,7 @@ const H4 = styled.h4`
 const Featured = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
+  grid-gap: 32px;
 
   @media (max-width: 1199px) {
     margin: 0 16px;
@@ -248,7 +247,7 @@ const Video = styled.div`
   border-radius: 10px;
   border: 1px solid rgba(132, 142, 174, 0.5);
   max-height: ${props => (props.small ? 192 : 384)}px;
-  ${props => props.small && `width: 260px`};
+  ${props => props.small && `width: 256px`};
 
   &::before {
     content: '';
@@ -307,15 +306,15 @@ const Video = styled.div`
 
 const Recent = styled.div`
   display: grid;
-  grid-template-columns: ${props => `repeat(${props.num},256px)}`};
-  grid-gap: 24px;
+  grid-template-columns: ${props => `repeat(${props.num}, 256px)}`};
+  grid-gap: 32px;
   overflow-x: scroll;
   padding-bottom: 24px;
 
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   &::-webkit-scrollbar {
-    display: none; // Safari and Chrome
+    display: none;
   }
 
   @media (max-width: 1199px) {
