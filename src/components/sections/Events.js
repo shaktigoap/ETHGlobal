@@ -125,6 +125,12 @@ const CardGrid = styled.div`
     grid-template-columns: ${`repeat(${props.num}, 256px)`};
     overflow-x: scroll;
     justify-content: start;
+
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    &::-webkit-scrollbar { 
+      display: none;  // Safari and Chrome
+    }
   `};
 `;
 

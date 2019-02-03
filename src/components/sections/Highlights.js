@@ -312,6 +312,12 @@ const Recent = styled.div`
   overflow-x: scroll;
   padding-bottom: 24px;
 
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
+
   @media (max-width: 1199px) {
     padding-left: 16px;
   }
