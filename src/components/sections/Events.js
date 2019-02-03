@@ -55,7 +55,7 @@ const Events = props => (
     `}
     render={data => (
       <Section id="events" {...props} background={theme.color.blue.xlight}>
-        <ReactTooltip place="right" />
+        <ReactTooltip place="top" effect="solid" />
         <Container fluid>
           <HeadingContainer>
             <h3>Events</h3>
