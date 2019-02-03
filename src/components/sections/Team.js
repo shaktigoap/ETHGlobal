@@ -9,30 +9,32 @@ import { Section, Container } from 'components/global';
 import ExternalLink from 'common/ExternalLink';
 
 // To add a team member:
-// - Add details to the array below
-// - Add his profile image to src/images/team
-// - Make sure it is named as per his 'name' field
-//   Lowercase, spaces replaced with underscores
-//   ex: Christian Bale -> christian_bale
+// - Add profile image to src/images/team
+// - Fill details in the array below
+// - avatar is the name of the profile image
 const TEAM = [
   {
     name: 'Christian Bale',
     title: 'Software Engineer',
+    avatar: 'christian_bale.jpg',
     href: 'https://twitter.com/TheOfficialBale',
   },
   {
-    name: 'Batman',
+    name: 'Clark Kent',
     title: 'Chief Scientist',
+    avatar: 'batman.jpg',
     href: 'https://twitter.com/TheOfficialBale',
   },
   {
     name: 'Christian Bale',
     title: 'Chief Scientist',
+    avatar: 'christian_bale.jpg',
     href: 'https://twitter.com/TheOfficialBale',
   },
   {
     name: 'Batman',
     title: 'Software Engineer',
+    avatar: 'batman.jpg',
     href: 'https://twitter.com/TheOfficialBale',
   },
 ];
@@ -40,20 +42,16 @@ const TEAM = [
 const Team = props => (
   <StaticQuery
     query={graphql`
-      fragment squareImage on File {
-        childImageSharp {
-          fluid(maxWidth: 100, maxHeight: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
       query {
         allFile(filter: { sourceInstanceName: { eq: "team" } }) {
           edges {
             node {
-              name
-              ...squareImage
+              relativePath
+              childImageSharp {
+                fluid(maxWidth: 100, maxHeight: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
@@ -64,9 +62,9 @@ const Team = props => (
         <Container>
           <h2 style={{ textAlign: 'center' }}>Team</h2>
           <Grid>
-            {TEAM.map(({ name, title, href }) => {
+            {TEAM.map(({ name, title, avatar, href }) => {
               const avatarImg = data.allFile.edges.find(
-                ({ node }) => node.name === name.replace(' ', '_').toLowerCase()
+                ({ node }) => node.relativePath === avatar
               ).node;
 
               return (
