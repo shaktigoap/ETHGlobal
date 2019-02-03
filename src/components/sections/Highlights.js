@@ -167,12 +167,24 @@ const H4 = styled.h4`
     background: ${props => props.theme.color.blue.regular};
     margin-right: 12px;
   }
+
+  @media (max-width: 1199px) {
+    margin-left: 16px;
+  }
 `;
 
 const Featured = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 24px;
+
+  @media (max-width: 1199px) {
+    margin: 0 16px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Details = styled.div`
@@ -299,6 +311,10 @@ const Recent = styled.div`
   grid-gap: 24px;
   overflow-x: scroll;
   padding-bottom: 24px;
+
+  @media (max-width: 1199px) {
+    padding-left: 16px;
+  }
 `;
 
 export default Highlights;
