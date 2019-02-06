@@ -4,6 +4,7 @@ import ReactTooltip from 'react-tooltip';
 
 import { Section, Container } from 'components/global';
 import EventCard from 'common/EventCard';
+import HorizontalScroller from 'common/HorizontalScroller';
 
 import theme from '../../theme';
 import { StaticQuery, graphql } from 'gatsby';
@@ -35,6 +36,12 @@ const UPCOMING_EVENTS = [
   },
 ];
 
+const Arrow = ({ text, className }) => {
+  return <div className={className}>{text}</div>;
+};
+export const ArrowLeft = Arrow({ text: '<', className: 'arrow-prev' });
+export const ArrowRight = Arrow({ text: '>', className: 'arrow-next' });
+
 const Events = props => (
   <StaticQuery
     query={graphql`
@@ -56,12 +63,12 @@ const Events = props => (
     render={data => (
       <Section id="events" {...props} background={theme.color.blue.xlight}>
         <ReactTooltip place="top" effect="solid" />
-        <Container fluid>
+        <Container>
           <HeadingContainer>
             <h3>Events</h3>
             <h2>Upcoming Events</h2>
           </HeadingContainer>
-          <CardGrid num={UPCOMING_EVENTS.length}>
+          <CardGrid>
             {UPCOMING_EVENTS.map(({ avatar, ...event }) => {
               const avatarImg = data.allFile.edges.find(
                 ({ node }) => node.relativePath === avatar
@@ -75,9 +82,9 @@ const Events = props => (
             })}
           </CardGrid>
           <h3 style={{ marginTop: 64, textAlign: 'center' }}>Past Events</h3>
-          <CardGrid num={UPCOMING_EVENTS.length * 2} scroll>
+          <HorizontalScroller>
             {[...UPCOMING_EVENTS, ...UPCOMING_EVENTS].map(
-              ({ avatar, ...event }) => {
+              ({ avatar, ...event }, index) => {
                 const avatarImg = data.allFile.edges.find(
                   ({ node }) => node.relativePath === avatar
                 ).node;
@@ -85,12 +92,13 @@ const Events = props => (
                   <EventCard
                     {...event}
                     avatar={avatarImg.childImageSharp.fluid}
+                    key={index}
                     inactive
                   />
                 );
               }
             )}
-          </CardGrid>
+          </HorizontalScroller>
         </Container>
       </Section>
     )}
@@ -113,9 +121,9 @@ const HeadingContainer = styled.div`
 const CardGrid = styled.div`
   margin: 40px 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 256px);
+  grid-template-columns: repeat(auto-fit, 260px);
   justify-content: center;
-  grid-gap: 24px;
+  grid-gap: 30px;
 
   ${props =>
     props.scroll &&

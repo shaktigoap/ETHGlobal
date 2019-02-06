@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import VideoModal from 'common/VideoModal';
 import { Section, Container } from 'components/global';
+import HorizontalScroller from 'common/HorizontalScroller';
 
 const FEATURED = [
   {
@@ -84,7 +85,7 @@ class Highlights extends Component {
           modalOpen={modalOpen}
           handleClose={this.handleModalClose}
         />
-        <Container fluid>
+        <Container>
           <Heading>
             <h2>Get the highlights</h2>
             <p>Check out panels, workshops and more from our past events.</p>
@@ -106,8 +107,8 @@ class Highlights extends Component {
             ))}
           </Featured>
           <H4>RECENT</H4>
-          <Recent num={RECENT.length}>
-            {RECENT.map(({ title, duration, location, url, image }) => (
+          <HorizontalScroller video>
+            {RECENT.map(({ title, duration, location, url }) => (
               <div>
                 <Video small onClick={() => this.handleVideoThumbClick(url)}>
                   <img src={this.getVideoThumb(url)} alt={title} />
@@ -121,7 +122,7 @@ class Highlights extends Component {
                 />
               </div>
             ))}
-          </Recent>
+          </HorizontalScroller>
         </Container>
       </Section>
     );
@@ -166,20 +167,12 @@ const H4 = styled.h4`
     background: ${props => props.theme.color.blue.regular};
     margin-right: 12px;
   }
-
-  @media (max-width: 1199px) {
-    margin-left: 16px;
-  }
 `;
 
 const Featured = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 32px;
-
-  @media (max-width: 1199px) {
-    margin: 0 16px;
-  }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -247,7 +240,6 @@ const Video = styled.div`
   border-radius: 10px;
   border: 1px solid rgba(132, 142, 174, 0.5);
   max-height: ${props => (props.small ? 192 : 384)}px;
-  ${props => props.small && `width: 256px`};
 
   &::before {
     content: '';
@@ -302,24 +294,6 @@ const Video = styled.div`
       }
     }
   `};
-`;
-
-const Recent = styled.div`
-  display: grid;
-  grid-template-columns: ${props => `repeat(${props.num}, 256px)}`};
-  grid-gap: 32px;
-  overflow-x: scroll;
-  padding-bottom: 24px;
-
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (max-width: 1199px) {
-    padding-left: 16px;
-  }
 `;
 
 export default Highlights;
