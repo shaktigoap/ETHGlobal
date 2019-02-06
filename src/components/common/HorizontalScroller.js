@@ -12,6 +12,8 @@ const HorizontalScroller = ({ children, ...other }) => (
       arrowRight={<Arrow />}
       hideArrows={true}
       hideSingleArrow={true}
+      alignCenter={false}
+      translate={0.001}
       data={children}
     />
   </Wrapper>
@@ -47,12 +49,21 @@ const ArrowLeft = styled(Arrow)`
 `;
 
 const Wrapper = styled.div`
+  .horizontal-menu {
+    position: relative;
+  }
+
   .menu-item-wrapper {
-    width: 256px;
-    margin-left: 4px;
+    > a {
+      display: block;
+      margin-left: 4px;
+      width: 268px;
+    }
 
     &:not(:first-child) {
-      margin-left: 24px;
+      > a {
+        margin-left: 30px;
+      }
     }
   }
 
@@ -61,19 +72,56 @@ const Wrapper = styled.div`
   }
 
   .scroll-menu-arrow {
-    margin-left: -24px;
     z-index: 1;
     transition: opacity 0.1s ease-in;
+    position: absolute;
+    left: auto;
+    right: -27px;
 
     &:first-of-type {
-      margin-right: -24px;
-      margin-left: 0;
+      left: -27px;
+      right: auto;
     }
 
     &--disabled {
       opacity: 0;
     }
+
+    @media (max-width: 576px) {
+      left: auto;
+      right: -16px;
+
+      &:first-of-type {
+        left: -16px;
+        right: auto;
+      }
+    }
   }
+
+  ${props =>
+    props.video &&
+    `
+    .scroll-menu-arrow {
+      top: 72px;
+    }
+
+    .menu-wrapper {
+      padding-top: 0;
+    }
+
+    .menu-item-wrapper {
+      > div {
+        width: 268px;
+        margin-left: 0;
+      }
+
+      &:not(:first-child) {
+        > div {
+          margin-left: 32px;
+        }
+      }
+    }
+  `};
 `;
 
 export default HorizontalScroller;
