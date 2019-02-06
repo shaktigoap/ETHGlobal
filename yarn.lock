@@ -9555,10 +9555,9 @@ react-helmet@^5.2.0:
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
 
-react-horizontal-scrolling-menu@^0.4.5:
+"react-horizontal-scrolling-menu@https://github.com/ajayns/react-horizontal-scrolling-menu#gatsby":
   version "0.4.5"
-  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-0.4.5.tgz#7c3325409839f59de15dd781255441f4a14091a9"
-  integrity sha512-jCltr+IxF4uXNoHuM22hSOPFf7J2LNptXSgvJLWs0CgN4qguGHPDnmwezT/S+vj77MkL1DH2FprfJ56qwMpjrg==
+  resolved "https://github.com/ajayns/react-horizontal-scrolling-menu#0a36e967029540e5032910d7b5daef8cc9742c0c"
 
 react-hot-loader@^4.6.2:
   version "4.6.3"
