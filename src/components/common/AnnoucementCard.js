@@ -11,7 +11,7 @@ const ANNOUCEMENT = {
 
 const AlertCard = props => (
   <Card small {...props}>
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <StyledImg src="https://picsum.photos/200" alt="Annoucement" />
       <div>
         <Pill appearance="alert">{ANNOUCEMENT.title}</Pill>
@@ -29,6 +29,10 @@ const StyledImg = styled.img`
   object-fit: contain;
   border-radius: 5px;
   margin-right: 24px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export default AlertCard;

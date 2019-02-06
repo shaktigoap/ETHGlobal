@@ -45,12 +45,17 @@ const HeadingContainer = styled.div`
 
   h1 {
     max-width: 800px;
+
+    @media (max-width: 576px) {
+      font-size: 50px;
+      line-height: 64px;
+    }
   }
 `;
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 24px;
 `;
 
