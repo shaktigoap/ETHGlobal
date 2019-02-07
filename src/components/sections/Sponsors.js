@@ -4,44 +4,175 @@ import styled from 'styled-components';
 import { Section, Container, Button } from 'components/global';
 import ExternalLink from 'common/ExternalLink';
 
-import SampleLogo1 from 'static/logos/Ethereum.svg';
-import SampleLogo2 from 'static/logos/Svangel.svg';
+import Maker from 'static/sponsors/maker.svg';
+import Celer from 'static/sponsors/celer.svg';
+import Logo0x from 'static/sponsors/0x.svg';
+import Skale from 'static/sponsors/skale.svg';
+import Brave from 'static/sponsors/brave.svg';
+import Augur from 'static/sponsors/augur.svg';
+import ChainLink from 'static/sponsors/chainlink.svg';
+import Bloqboard from 'static/sponsors/bloqboard.svg';
+import Consensys from 'static/sponsors/consensys.svg';
+import Harbor from 'static/sponsors/harbor.svg';
+import Dharma from 'static/sponsors/dharma.png';
+import Thegraph from 'static/sponsors/thegraph.svg';
+import SetP from 'static/sponsors/set.svg';
+import Kyber from 'static/sponsors/kyber.svg';
+import Quantstamp from 'static/sponsors/quantstamp.svg';
+import Coinbase from 'static/sponsors/coinbase.svg';
+import Golem from 'static/sponsors/golem.svg';
+import Circle from 'static/sponsors/circle.svg';
+import Dydx from 'static/sponsors/dydx.svg';
+import Omisego from 'static/sponsors/omisego.svg';
+import Gitcoin from 'static/sponsors/gitcoin.svg';
+import Zilliqa from 'static/sponsors/zilliqa.svg';
+import Aragon from 'static/sponsors/aragon.svg';
+import Status from 'static/sponsors/status.svg';
+import Ledger from 'static/sponsors/ledger.png';
+import Coinfund from 'static/sponsors/coinfund.png';
+import Polychain from 'static/sponsors/polychain.png';
+
+// title is the name of sponsor
+// href the link of their website
+// Add logo image to static/sponsors/
+// img should be first imported as done above
+// Assign value in img object below
 
 const SPONSORS = [
   {
-    title: 'Ethereum1',
-    href: 'https://www.ethereum.org/',
-    img: SampleLogo1,
+    title: 'MakerDao',
+    href: '',
+    img: Maker,
   },
   {
-    title: 'Ethereum1',
-    href: 'https://www.ethereum.org/',
-    img: SampleLogo2,
+    title: 'Celer',
+    href: '',
+    img: Celer,
   },
   {
-    title: 'Ethereum2',
-    href: 'https://www.ethereum.org/',
-    img: SampleLogo1,
+    title: '0x',
+    href: '',
+    img: Logo0x,
   },
   {
-    title: 'Ethereum3',
-    href: 'https://www.ethereum.org/',
-    img: SampleLogo1,
+    title: 'Skale',
+    href: '',
+    img: Skale,
   },
   {
-    title: 'Ethereum4',
-    href: 'https://www.ethereum.org/',
-    img: SampleLogo2,
+    title: 'Brave',
+    href: '',
+    img: Brave,
   },
   {
-    title: 'Ethereum5',
-    href: 'https://www.ethereum.org/',
-    img: SampleLogo1,
+    title: 'Augur',
+    href: '',
+    img: Augur,
   },
   {
-    title: 'Ethereum6',
-    href: 'https://www.ethereum.org/',
-    img: SampleLogo1,
+    title: 'Chainlink',
+    href: '',
+    img: ChainLink,
+  },
+  {
+    title: 'Bloqboard',
+    href: '',
+    img: Bloqboard,
+  },
+  {
+    title: 'Consensys',
+    href: '',
+    img: Consensys,
+  },
+  {
+    title: 'Harbor',
+    href: '',
+    img: Harbor,
+  },
+  {
+    title: 'Dharma',
+    href: '',
+    img: Dharma,
+  },
+  {
+    title: 'The Graph',
+    href: '',
+    img: Thegraph,
+  },
+  {
+    title: 'Set Protocol',
+    href: '',
+    img: SetP,
+  },
+  {
+    title: 'Kyber Network',
+    href: '',
+    img: Kyber,
+  },
+  {
+    title: 'Quantstamp',
+    href: '',
+    img: Quantstamp,
+  },
+  {
+    title: 'Coinbase',
+    href: '',
+    img: Coinbase,
+  },
+  {
+    title: 'Golem',
+    href: '',
+    img: Golem,
+  },
+  {
+    title: 'Circle',
+    href: '',
+    img: Circle,
+  },
+  {
+    title: 'Dy/Dx',
+    href: '',
+    img: Dydx,
+  },
+  {
+    title: 'Omisego',
+    href: '',
+    img: Omisego,
+  },
+  {
+    title: 'Gitcoin',
+    href: '',
+    img: Gitcoin,
+  },
+  {
+    title: 'Zilliqa',
+    href: '',
+    img: Zilliqa,
+  },
+  {
+    title: 'Aragon',
+    href: '',
+    img: Aragon,
+  },
+  {
+    title: 'Status',
+    href: '',
+    img: Status,
+  },
+  {
+    title: 'Ledger',
+    href: '',
+    img: Ledger,
+  },
+  {
+    title: 'Coinfund',
+    href: '',
+    img: Coinfund,
+  },
+  {
+    title: 'Polychain',
+    href: '',
+    img: Polychain,
   },
 ];
 
@@ -50,11 +181,17 @@ const Sponsors = props => (
     <Container>
       <h2 style={{ textAlign: 'center' }}>Sponsors</h2>
       <Grid>
-        {SPONSORS.map(({ title, href, img }) => (
-          <ExternalLink href={href} key={title}>
-            <img src={img} alt={title + 'Logo'} />
-          </ExternalLink>
-        ))}
+        {SPONSORS.map(({ title, href, img }) =>
+          href !== '' ? (
+            <ExternalLink href={href} key={title}>
+              <img src={img} alt={title + 'Logo'} />
+            </ExternalLink>
+          ) : (
+            <div>
+              <img src={img} alt={title + 'Logo'} />
+            </div>
+          )
+        )}
       </Grid>
       <ButtonWrapper>
         <Button as="a" href="mailto:sponsor@ethglobal.co">
@@ -72,9 +209,15 @@ const Grid = styled.div`
   grid-gap: 48px;
   justify-content: center;
 
+  div,
+  a {
+    display: flex;
+    align-items: center;
+  }
+
   img {
     width: 100%;
-    height: 72px;
+    max-height: 72px;
   }
 `;
 
