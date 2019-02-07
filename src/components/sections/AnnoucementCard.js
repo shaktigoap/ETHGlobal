@@ -12,7 +12,11 @@ const ANNOUCEMENT = {
 const AlertCard = props => (
   <Card small {...props}>
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <StyledImg src="https://picsum.photos/200" alt="Annoucement" />
+      <StyledImg
+        src="https://picsum.photos/200"
+        alt="Annoucement"
+        style={{ display: 'none' }}
+      />
       <div>
         <Pill appearance="alert">{ANNOUCEMENT.title}</Pill>
         <p style={{ fontWeight: 'bold', marginTop: 16 }}>
