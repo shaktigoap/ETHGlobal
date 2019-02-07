@@ -22,8 +22,7 @@ const About = props => (
           Hackathons teach new skills, strengthen developer communities, and
           push the limits of new technologies. At ETHGlobal, we're leveraging
           our years of experience to foster a world-class ecosystem of Ethereum
-          developers and entrepreneurs.nd entrepreneurs, collectively building
-          the Web 3 world.
+          developers and entrepreneurs.
         </p>
         <p>
           <strong>Learn:</strong> New to Ethereum? Our events are the best way
