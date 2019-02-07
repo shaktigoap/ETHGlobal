@@ -9,11 +9,11 @@ const SEO_DATA = {
   keywords: ['ethereum', 'global'],
   twitter: {
     id: '@twitterid',
-    img: 'http://ethglobal.co/img/seo.png',
+    img: 'https://ethglobal.co/og.png',
   },
   facebook: {
     id: '2342342',
-    img: 'http://ethglobal.co/img/seo.png',
+    img: 'https://ethglobal.co/og.png',
   },
 };
 
@@ -28,8 +28,8 @@ const SEO = () => {
       <meta property="og:description" content={SEO_DATA.description} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content="@hackinoutco" />
-      <meta name="twitter:site" content="@hackinoutco" />
+      <meta name="twitter:creator" content={SEO_DATA.twitter.id} />
+      <meta name="twitter:site" content={SEO_DATA.twitter.id} />
       <meta name="twitter:title" content={SEO_DATA.title} />
       <meta name="twitter:description" content={SEO_DATA.description} />
       <meta name="twitter:domain" content={SEO_DATA.url} />
