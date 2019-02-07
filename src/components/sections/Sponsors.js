@@ -31,6 +31,9 @@ import Status from 'static/sponsors/status.svg';
 import Ledger from 'static/sponsors/ledger.png';
 import Coinfund from 'static/sponsors/coinfund.png';
 import Polychain from 'static/sponsors/polychain.png';
+import BlockchainC from 'static/sponsors/blockchaincapital.svg';
+import Compound from 'static/sponsors/compound.svg';
+import Nucypher from 'static/sponsors/nucypher.svg';
 
 // title is the name of sponsor
 // href the link of their website
@@ -173,6 +176,21 @@ const SPONSORS = [
     title: 'Polychain',
     href: '',
     img: Polychain,
+  },
+  {
+    title: 'Blockchain Capital',
+    href: '',
+    img: BlockchainC,
+  },
+  {
+    title: 'Compound',
+    href: '',
+    img: Compound,
+  },
+  {
+    title: 'Nucypher',
+    href: '',
+    img: Nucypher,
   },
 ];
 
