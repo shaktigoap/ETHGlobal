@@ -11,9 +11,10 @@ import Team from 'components/sections/Team';
 import FAQ from 'components/sections/FAQ';
 import Footer from 'components/sections/Footer';
 
+import AnnoucementCard from 'components/sections/AnnoucementCard';
+import NewsletterForm from 'components/sections/NewsletterForm';
+
 import { FloatingContainer } from 'components/global';
-import AnnoucementCard from 'common/AnnoucementCard';
-import NewsletterForm from 'common/NewsletterForm';
 
 const IndexPage = () => (
   <Layout>
