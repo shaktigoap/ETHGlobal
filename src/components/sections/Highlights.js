@@ -7,55 +7,49 @@ import HorizontalScroller from 'common/HorizontalScroller';
 
 const FEATURED = [
   {
-    title: 'Vitalik at Singapore',
-    duration: '34:00',
+    title: `“If we want crypto to get more adoption, it has to be by providing real value to people” - Vitalik`,
+    duration: '45:14',
     location: 'ETHSingapore',
     url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
   },
   {
-    title: 'Vitalik at Singapore',
-    duration: '34:00',
-    location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=lyu7v7nWzfo',
+    title: `"People don't realize how close the tech is to being ready" - Vitalik & Balaji Srinivasan at ETHSF`,
+    duration: '55:30',
+    location: 'ETHSanFrancisco',
+    url: 'https://www.youtube.com/watch?v=E35poTWzWZA',
   },
 ];
 
 const RECENT = [
   {
-    title: 'Vitalik at Singapore',
-    duration: '34:00',
-    location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=RplnSVTzvnU',
+    title: `Open Finance on Ethereum with Dharma, 0x, Maker, Compound, and Coinbase - ETHSanFrancisco`,
+    duration: '52:23',
+    location: 'ETHSanFrancisco',
+    url: 'https://www.youtube.com/watch?v=6KYtsI_ZfUI',
   },
   {
-    title: 'Vitalik at Singapore',
-    duration: '34:00',
-    location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=egC2F_JKuhc',
+    title: `Vitalik Buterin at ETHWaterloo: Blockchains and Privacy through Strong Cryptography`,
+    duration: '36:49',
+    location: 'ETHWaterloo',
+    url: 'https://www.youtube.com/watch?v=9cDFpACnK1U',
   },
   {
-    title: 'Vitalik at Singapore',
-    duration: '34:00',
-    location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=lyu7v7nWzfo',
+    title: `Jeff Coleman at ETHWaterloo: Blockchains and Mechanism Design`,
+    duration: '27:41',
+    location: 'ETHWaterloo',
+    url: 'https://www.youtube.com/watch?v=9j0zTQ8u4II',
   },
   {
-    title: 'Vitalik at Singapore',
-    duration: '34:00',
-    location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=RplnSVTzvnU',
+    title: `How Decentralized Technology Will Impact Our Society at ETHWaterloo`,
+    duration: '2:47:41',
+    location: 'ETHWaterloo',
+    url: 'https://www.youtube.com/watch?v=7qBRESY_Ejc',
   },
   {
-    title: 'Vitalik at Singapore',
-    duration: '34:00',
-    location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=lyu7v7nWzfo',
-  },
-  {
-    title: 'Vitalik at Singapore',
-    duration: '34:00',
-    location: 'ETHSingapore',
-    url: 'https://www.youtube.com/watch?v=RplnSVTzvnU',
+    title: `ETHWaterloo 2017`,
+    duration: '5:57',
+    location: 'ETHWaterloo',
+    url: 'https://www.youtube.com/watch?v=H_WBFIoWFYg',
   },
 ];
 
@@ -73,8 +67,15 @@ class Highlights extends Component {
 
   handleModalClose = () => this.setState({ modalOpen: false });
 
-  getVideoThumb = url =>
-    `https://img.youtube.com/vi/${url.split('v=')[1]}/maxresdefault.jpg`;
+  getVideoThumb = url => {
+    if (url === 'https://www.youtube.com/watch?v=6KYtsI_ZfUI') {
+      return `https://img.youtube.com/vi/${url.split('v=')[1]}/hqdefault.jpg`;
+    } else {
+      return `https://img.youtube.com/vi/${
+        url.split('v=')[1]
+      }/maxresdefault.jpg`;
+    }
+  };
 
   render() {
     const { modalOpen, previewVideoUrl } = this.state;
@@ -195,11 +196,21 @@ const Details = styled.div`
       ${props.theme.font_size.regular};
       margin-top: 16px;
       margin-bottom: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 268px;
     }
     p {
       ${props.theme.font_size.small};
     }
   `};
+
+  ${props =>
+    !props.small &&
+    `
+    margin-right: 32px;
+  `}
 `;
 
 const PlayIcon = styled.div`
@@ -240,6 +251,7 @@ const Video = styled.div`
   border-radius: 10px;
   border: 1px solid rgba(132, 142, 174, 0.5);
   max-height: ${props => (props.small ? 192 : 384)}px;
+  background-color: black;
 
   &::before {
     content: '';
