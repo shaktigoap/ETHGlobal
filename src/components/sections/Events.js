@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 const UPCOMING_EVENTS = [
   {
-    title: 'ETHDenver',
+    title: 'ETHDenver II',
     location: 'Denver, Colorado',
     dates: 'Feb 15-17, 2019',
     avatar: 'ethdenver.jpg',
@@ -33,6 +33,65 @@ const UPCOMING_EVENTS = [
     avatar: 'ethcapetown.jpg',
     primaryColor: '#2F302E',
     href: 'https://ethcapetown.com/',
+  },
+];
+
+const PREVIOUS_EVENTS = [
+  {
+    title: 'ETHSingapore',
+    location: 'Singapore, Singapore',
+    dates: 'Dec 7-9, 2018',
+    avatar: 'ethsg.jpg',
+    primaryColor: '#ED4544',
+    href: 'https://ethsingapore.co/',
+  },
+  {
+    title: 'ETHSanFrancisco',
+    location: 'San Francisco, USA',
+    dates: 'Oct 5-7, 2018',
+    avatar: 'ethsf.jpg',
+    primaryColor: '#F0774A',
+    href: 'https://ethsanfrancisco.com/',
+  },
+  {
+    title: 'ETHBerlin',
+    location: 'Berlin, Germany',
+    dates: 'Sep 7-9, 2018',
+    avatar: 'ethberlin.jpg',
+    primaryColor: '#262626',
+    href: 'https://ethberlin.com/',
+  },
+  {
+    title: 'ETHIndia',
+    location: 'Bangalore, India',
+    dates: 'Aug 10-12, 2018',
+    avatar: 'ethindia.jpg',
+    primaryColor: '#203260',
+    href: 'https://ethindia.co/',
+  },
+  {
+    title: 'ETHBuenosAires',
+    location: 'Buenos Aires, Argentina',
+    dates: 'May 25-27, 2018',
+    avatar: 'ethba.jpg',
+    primaryColor: '#6734FF',
+    href: 'https://ethbuenosaires.com/',
+  },
+  {
+    title: 'ETHDenver',
+    location: 'Denver, Colorado',
+    dates: 'Feb 16-18, 2018',
+    avatar: 'ethdenver.jpg',
+    primaryColor: '#FBD0DA',
+    href: 'http://ethdenver.com/',
+  },
+  {
+    title: 'ETHWaterloo',
+    location: 'Waterloo, Ontario',
+    dates: 'Oct 13-15, 2017',
+    avatar: 'ethwaterloo.jpg',
+    primaryColor: '#F5F5F5',
+    href: 'http://ethwaterloo.com/',
   },
 ];
 
@@ -83,21 +142,19 @@ const Events = props => (
           </CardGrid>
           <h3 style={{ marginTop: 64, textAlign: 'center' }}>Past Events</h3>
           <HorizontalScroller>
-            {[...UPCOMING_EVENTS, ...UPCOMING_EVENTS].map(
-              ({ avatar, ...event }, index) => {
-                const avatarImg = data.allFile.edges.find(
-                  ({ node }) => node.relativePath === avatar
-                ).node;
-                return (
-                  <EventCard
-                    {...event}
-                    avatar={avatarImg.childImageSharp.fluid}
-                    key={index}
-                    inactive
-                  />
-                );
-              }
-            )}
+            {PREVIOUS_EVENTS.map(({ avatar, ...event }, index) => {
+              const avatarImg = data.allFile.edges.find(
+                ({ node }) => node.relativePath === avatar
+              ).node;
+              return (
+                <EventCard
+                  {...event}
+                  avatar={avatarImg.childImageSharp.fluid}
+                  key={index}
+                  inactive
+                />
+              );
+            })}
           </HorizontalScroller>
         </Container>
       </Section>
