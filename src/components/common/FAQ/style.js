@@ -54,5 +54,6 @@ export const Wrapper = styled.div`
     padding: 32px;
     padding-top: 0;
     ${props => props.theme.font_size.small};
+    line-height: 26px;
   }
 `;

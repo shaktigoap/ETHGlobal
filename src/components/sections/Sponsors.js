@@ -57,7 +57,7 @@ const Sponsors = props => (
         ))}
       </Grid>
       <ButtonWrapper>
-        <Button as={ExternalLink} href="https://www.ethereum.org/">
+        <Button as="a" href="mailto:sponsor@ethglobal.co">
           Become a sponsor
         </Button>
       </ButtonWrapper>
