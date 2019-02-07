@@ -110,7 +110,7 @@ const Events = props => (
             node {
               relativePath
               childImageSharp {
-                fluid(maxWidth: 90, maxHeight: 90) {
+                fluid(maxWidth: 180, maxHeight: 180) {
                   ...GatsbyImageSharpFluid
                 }
               }

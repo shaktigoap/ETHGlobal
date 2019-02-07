@@ -48,7 +48,7 @@ const Team = props => (
             node {
               relativePath
               childImageSharp {
-                fluid(maxWidth: 100, maxHeight: 100) {
+                fluid(maxWidth: 200, maxHeight: 200) {
                   ...GatsbyImageSharpFluid
                 }
               }
