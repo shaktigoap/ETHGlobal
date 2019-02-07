@@ -7,8 +7,16 @@ import EthGlobalLogo from 'static/logos/ETHGlobal.svg';
 
 const Header = props => (
   <header {...props}>
-    <MobileImageWrapper style={{ overflow: 'hidden' }}>
-      <FullWidthImage width={991} src={HeroMobileImage} alt="Hero" />
+    <MobileImageWrapper>
+      <img
+        style={{
+          width: '100%',
+          marginBottom: -240,
+        }}
+        src={HeroMobileImage}
+        alt="Hero"
+        mobile
+      />
     </MobileImageWrapper>
     <ImageWrapper>
       <FullWidthImage width={1920} src={HeroImage} alt="Hero" />
@@ -21,7 +29,6 @@ const Header = props => (
 );
 
 const MobileImageWrapper = styled.div`
-  overflow: hidden;
   display: none;
 
   @media (max-width: 991px) {
