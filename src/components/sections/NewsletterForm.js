@@ -15,9 +15,39 @@ const NewsLetterForm = props => (
         events.
       </p>
     </Centered>
-    <Form>
-      <Input type="text" placeholder="Your email" />
-      <Button>Submit</Button>
+    <Form
+      action={`https://ethwaterloo.us16.list-manage.com/subscribe/post?u=98a76c70b9cb90ca3268618a3&amp;id=4f4e5f85ff`}
+      method="post"
+      class="ui form"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      target="_blank"
+      novalidate
+    >
+      <Input
+        placeholder="Your email"
+        type="email"
+        name="EMAIL"
+        class="email input"
+        id="mce-EMAIL"
+        required=""
+      />
+      <Button
+        type="submit"
+        name="subscribe"
+        id="mc-embedded-subscribe"
+        class="ui button"
+      >
+        Subscribe
+      </Button>
+      <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+        <input
+          type="text"
+          name="b_98a76c70b9cb90ca3268618a3_4f4e5f85ff"
+          tabindex="-1"
+          value=""
+        />
+      </div>
     </Form>
   </Card>
 );
