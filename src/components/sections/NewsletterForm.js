@@ -18,7 +18,6 @@ const NewsLetterForm = props => (
     <Form
       action={`https://ethwaterloo.us16.list-manage.com/subscribe/post?u=98a76c70b9cb90ca3268618a3&amp;id=4f4e5f85ff`}
       method="post"
-      class="ui form"
       id="mc-embedded-subscribe-form"
       name="mc-embedded-subscribe-form"
       target="_blank"
@@ -28,16 +27,10 @@ const NewsLetterForm = props => (
         placeholder="Your email"
         type="email"
         name="EMAIL"
-        class="email input"
         id="mce-EMAIL"
         required=""
       />
-      <Button
-        type="submit"
-        name="subscribe"
-        id="mc-embedded-subscribe"
-        class="ui button"
-      >
+      <Button type="submit" name="subscribe" id="mc-embedded-subscribe">
         Subscribe
       </Button>
       <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
