@@ -22,7 +22,7 @@ const Footer = props => (
         <SocialIcons white style={{ marginTop: 24 }} />
       </Centered>
       <Copyright>
-        <span>© ETHGLOBAL 2018. ALL RIGHTS RESERVED.</span>
+        <span>© ETHGLOBAL 2019. ALL RIGHTS RESERVED.</span>
         <span>
           Made with ❤ by{' '}
           <ExternalLink href="http://ethdesign.co/">ETHDesign</ExternalLink>{' '}
