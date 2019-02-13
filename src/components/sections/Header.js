@@ -1,31 +1,66 @@
 import React from 'react';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { StaticQuery, graphql } from 'gatsby';
 
-import HeroImage from 'static/Hero.svg';
-import HeroMobileImage from 'static/Hero-mobile.svg';
-import EthGlobalLogo from 'static/logos/ETHGlobal.svg';
+import { ReactComponent as EthGlobalLogo } from 'static/logos/ETHGlobal.svg';
+
+import { Container } from 'components/global';
 
 const Header = props => (
-  <header {...props}>
-    <MobileImageWrapper>
-      <img
-        style={{
-          width: '100%',
-          marginBottom: -240,
-        }}
-        src={HeroMobileImage}
-        alt="Hero"
-        mobile
-      />
-    </MobileImageWrapper>
-    <ImageWrapper>
-      <FullWidthImage width={1920} src={HeroImage} alt="Hero" />
-      <LogoContainer>
-        <img src={EthGlobalLogo} alt="ETHGlobal" />
-        <p>Onboarding thousands of developers into the Ethereum ecosystem</p>
-      </LogoContainer>
-    </ImageWrapper>
-  </header>
+  <StaticQuery
+    query={graphql`
+      query {
+        hero: file(name: { eq: "hero" }) {
+          childImageSharp {
+            fluid(maxWidth: 3840) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        hero_mobile: file(name: { eq: "hero-mobile" }) {
+          childImageSharp {
+            fluid(maxWidth: 1984) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <header {...props}>
+        <MobileImageWrapper>
+          <Img
+            style={{
+              width: '100%',
+            }}
+            fluid={data.hero_mobile.childImageSharp.fluid}
+            alt="Hero"
+            mobile
+          />
+          <Container>
+            <Logo style={{ marginTop: 40 }} />
+          </Container>
+        </MobileImageWrapper>
+        <ImageWrapper>
+          <FullWidthImage
+            as={Img}
+            width={1920}
+            fluid={data.hero.childImageSharp.fluid}
+            alt="Hero"
+          />
+          <Logo float />
+        </ImageWrapper>
+      </header>
+    )}
+  />
+);
+
+const Logo = ({ float = false, ...other }) => (
+  <LogoContainer float={float} {...other}>
+    <EthGlobalLogo viewBox="0 0 722 160" />
+    <p>Onboarding thousands of developers into the Ethereum ecosystem</p>
+  </LogoContainer>
 );
 
 const MobileImageWrapper = styled.div`
@@ -54,23 +89,34 @@ const FullWidthImage = styled.img`
 `;
 
 const LogoContainer = styled.div`
-  position: absolute;
-  width: 320px;
-  top: 24%;
-  margin-left: 50%;
-  transform: translateX(-50%);
-
-  img {
+  svg {
     width: 100%;
+
+    @media (max-width: 575px) {
+      margin-bottom: -20px;
+    }
   }
 
   p {
-    margin-top: 16px;
     text-align: center;
     opacity: 0.6;
     font-size: 18px;
     line-height: 30px;
   }
+
+  ${props =>
+    props.float &&
+    `
+    position: absolute;
+    width: 320px;
+    top: 24%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    svg {
+      margin: -16px 0;
+    }
+  `}
 `;
 
 export default Header;
