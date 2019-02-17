@@ -43,7 +43,7 @@ const UPCOMING_EVENTS = [
     href: 'https://twitter.com/ethnewyork',
   },
   {
-    title: 'ETHIndia',
+    title: 'ETHIndia II',
     location: 'Bangalore, India',
     dates: 'August 2-4, 2019',
     avatar: 'ethindia.jpg',
