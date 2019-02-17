@@ -49,7 +49,7 @@ const TEAM = [
     avatar: 'heather.jpg',
     href: 'https://twitter.com/heather_claire',
   },
-].sort(() => 0.5 - Math.random());
+];
 
 const Team = props => (
   <StaticQuery
