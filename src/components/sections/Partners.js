@@ -17,14 +17,14 @@ const PARTNERS = [
     href: 'http://l4.ventures/',
   },
   {
-    name: 'Svangel',
-    logo: SvangelLogo,
-    href: 'https://svangel.com/',
-  },
-  {
     name: 'Ethereum Foudation',
     logo: EthereumLogo,
     href: 'https://ethereum.org/',
+  },
+  {
+    name: 'SVAngel',
+    logo: SvangelLogo,
+    href: 'https://svangel.com/',
   },
 ];
 
