@@ -29,7 +29,7 @@ const TEAM = [
     name: 'Josh Stark',
     // title: 'Co-Founder',
     avatar: 'josh.jpg',
-    href: 'https://twitter.com/TheOfficialBale',
+    href: 'https://twitter.com/0xstark',
   },
   {
     name: 'Jacob Willemsma',
