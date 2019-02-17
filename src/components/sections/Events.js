@@ -56,7 +56,7 @@ const UPCOMING_EVENTS = [
     dates: 'Sep 6-8, 2019',
     avatar: 'ethboston.jpg',
     primaryColor: '#b5ffc6',
-    href: 'https://ethcapetown.com/',
+    href: 'https://twitter.com/ethboston',
   },
   {
     title: 'ETHWaterloo',
