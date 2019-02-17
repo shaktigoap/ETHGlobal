@@ -14,30 +14,42 @@ import ExternalLink from 'common/ExternalLink';
 // - avatar is the name of the profile image
 const TEAM = [
   {
-    name: 'Christian Bale',
-    title: 'Software Engineer',
-    avatar: 'christian_bale.jpg',
+    name: 'Kartik Talwar',
+    // title: 'Co-Founder',
+    avatar: 'kartik.jpg',
+    href: 'https://twitter.com/TheRealKartik',
+  },
+  {
+    name: 'Liam Horne',
+    // title: 'Co-Founder',
+    avatar: 'liam.jpg',
+    href: 'https://twitter.com/liamihorne',
+  },
+  {
+    name: 'Josh Stark',
+    // title: 'Co-Founder',
+    avatar: 'josh.jpg',
     href: 'https://twitter.com/TheOfficialBale',
   },
   {
-    name: 'Clark Kent',
-    title: 'Chief Scientist',
-    avatar: 'batman.jpg',
-    href: 'https://twitter.com/TheOfficialBale',
+    name: 'Jacob Willemsma',
+    // title: 'Director',
+    avatar: 'jacob.jpg',
+    href: 'https://twitter.com/jacob_willemsma',
   },
   {
-    name: 'Christian Bale',
-    title: 'Chief Scientist',
-    avatar: 'christian_bale.jpg',
-    href: 'https://twitter.com/TheOfficialBale',
+    name: 'Andrew Dunscomb',
+    // title: 'Director',
+    avatar: 'andrew.jpeg',
+    href: 'https://twitter.com/ajd36',
   },
   {
-    name: 'Batman',
-    title: 'Software Engineer',
-    avatar: 'batman.jpg',
-    href: 'https://twitter.com/TheOfficialBale',
+    name: 'Heather Davidson',
+    // title: 'Director',
+    avatar: 'heather.jpg',
+    href: 'https://twitter.com/heather_claire',
   },
-];
+].sort(() => 0.5 - Math.random());
 
 const Team = props => (
   <StaticQuery
@@ -61,6 +73,11 @@ const Team = props => (
       <Section id="Team" {...props} background={theme.color.blue.light}>
         <Container>
           <h2 style={{ textAlign: 'center' }}>Team</h2>
+          <center>
+            <p>ETHGlobal is a community initiative, made possible by the incredible Ethereum communities in cities all over the world. ❤️</p>
+            <br></br>
+            <p>Our core operational team includes:</p>
+          </center>
           <Grid>
             {TEAM.map(({ name, title, avatar, href }) => {
               const avatarImg = data.allFile.edges.find(
