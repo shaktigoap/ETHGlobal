@@ -198,6 +198,9 @@ const Sponsors = props => (
   <Section id="sponsors" {...props}>
     <Container>
       <h2 style={{ textAlign: 'center' }}>Sponsors</h2>
+      <center>
+        <p>We’ve been fortunate enough to have been supported by some of the companies listed below at our past events</p>
+      </center>
       <Grid>
         {SPONSORS.map(({ title, href, img }) =>
           href !== '' ? (
@@ -205,10 +208,10 @@ const Sponsors = props => (
               <img src={img} alt={title + 'Logo'} />
             </ExternalLink>
           ) : (
-            <div>
-              <img src={img} alt={title + 'Logo'} />
-            </div>
-          )
+              <div>
+                <img src={img} alt={title + 'Logo'} />
+              </div>
+            )
         )}
       </Grid>
       <ButtonWrapper>

@@ -2,17 +2,17 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'Description',
+  description: 'Onboarding thousands of developers into the Ethereum ecosystem.',
   title: 'ETHGlobal',
   url: 'http://ethglobal.co',
-  author: 'team',
+  author: 'Devfolio',
   keywords: ['ethereum', 'global'],
   twitter: {
-    id: '@twitterid',
+    id: '@ethglobal',
     img: 'https://ethglobal.co/og.png',
   },
   facebook: {
-    id: '2342342',
+    id: '',
     img: 'https://ethglobal.co/og.png',
   },
 };
