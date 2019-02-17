@@ -34,7 +34,40 @@ const UPCOMING_EVENTS = [
     primaryColor: '#2F302E',
     href: 'https://ethcapetown.com/',
   },
+  {
+    title: 'ETHNewYork',
+    location: 'Brooklyn, New York',
+    dates: 'May 17-19, 2019',
+    avatar: 'ethnewyork.png',
+    primaryColor: '#000000',
+    href: 'https://twitter.com/ethnewyork',
+  },
+  {
+    title: 'ETHIndia',
+    location: 'Bangalore, India',
+    dates: 'August 2-4, 2019',
+    avatar: 'ethindia.jpg',
+    primaryColor: '#5072ce',
+    href: 'https://ethindia.co/',
+  },
+  {
+    title: 'ETHBoston',
+    location: 'Boston, Massachusetts',
+    dates: 'Apr 19-20, 2019',
+    avatar: 'ethboston.jpg',
+    primaryColor: '#b5ffc6',
+    href: 'https://ethcapetown.com/',
+  },
+  {
+    title: 'ETHWaterloo',
+    location: 'Waterloo, Ontario',
+    dates: 'Oct 4-6, 2019',
+    avatar: 'ethwaterloo.jpg',
+    primaryColor: '#8daae5',
+    href: 'https://ethwaterloo.com/',
+  }
 ];
+
 
 const PREVIOUS_EVENTS = [
   {
