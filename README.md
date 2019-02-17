@@ -22,4 +22,4 @@ Each of the sections in the site are placed in `src/sections`. Refer to the comm
 
 ## SEO
 
-A separate component `src/components/common/SEO.js` handles all meta data and SEO content, modify the `SEO_DATA` component to add the data automatically.
+The component `src/components/common/SEO.js` handles all meta data and SEO content, modify the `SEO_DATA` variable to add the data automatically.
