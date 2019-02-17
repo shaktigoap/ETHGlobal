@@ -59,7 +59,7 @@ const UPCOMING_EVENTS = [
     href: 'https://twitter.com/ethboston',
   },
   {
-    title: 'ETHWaterloo',
+    title: 'ETHWaterloo II',
     location: 'Waterloo, Ontario',
     dates: 'Oct 11-13, 2019',
     avatar: 'ethwaterloo.jpg',
