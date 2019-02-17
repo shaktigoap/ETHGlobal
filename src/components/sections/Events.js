@@ -53,7 +53,7 @@ const UPCOMING_EVENTS = [
   {
     title: 'ETHBoston',
     location: 'Boston, Massachusetts',
-    dates: 'Apr 19-20, 2019',
+    dates: 'Sep 6-8, 2019',
     avatar: 'ethboston.jpg',
     primaryColor: '#b5ffc6',
     href: 'https://ethcapetown.com/',
@@ -61,7 +61,7 @@ const UPCOMING_EVENTS = [
   {
     title: 'ETHWaterloo',
     location: 'Waterloo, Ontario',
-    dates: 'Oct 4-6, 2019',
+    dates: 'Oct 11-13, 2019',
     avatar: 'ethwaterloo.jpg',
     primaryColor: '#8daae5',
     href: 'https://ethwaterloo.com/',
