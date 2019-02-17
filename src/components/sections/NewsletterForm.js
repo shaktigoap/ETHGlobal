@@ -28,7 +28,7 @@ const NewsLetterForm = props => (
         type="email"
         name="EMAIL"
         id="mce-EMAIL"
-        required=""
+        required
       />
       <Button type="submit" name="subscribe" id="mc-embedded-subscribe">
         Subscribe
@@ -37,7 +37,7 @@ const NewsLetterForm = props => (
         <input
           type="text"
           name="b_98a76c70b9cb90ca3268618a3_4f4e5f85ff"
-          tabindex="-1"
+          tabIndex="-1"
           value=""
         />
       </div>

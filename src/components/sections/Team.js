@@ -74,8 +74,14 @@ const Team = props => (
         <Container>
           <h2 style={{ textAlign: 'center' }}>Team</h2>
           <center>
-            <p>ETHGlobal is a community initiative, made possible by the incredible Ethereum communities in cities all over the world. ❤️</p>
-            <br></br>
+            <p>
+              ETHGlobal is a community initiative, made possible by the
+              incredible Ethereum communities in cities all over the world.{' '}
+              <span role="img" aria-label="heart">
+                ❤️
+              </span>
+            </p>
+            <br />
             <p>Our core operational team includes:</p>
           </center>
           <Grid>
@@ -85,7 +91,7 @@ const Team = props => (
               ).node;
 
               return (
-                <StyledLink href={href}>
+                <StyledLink href={href} key={name}>
                   <Avatar fluid={avatarImg.childImageSharp.fluid} alt={name} />
                   <Title>{name}</Title>
                   <Subtitle>{title}</Subtitle>

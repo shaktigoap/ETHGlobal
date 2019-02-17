@@ -65,9 +65,8 @@ const UPCOMING_EVENTS = [
     avatar: 'ethwaterloo.jpg',
     primaryColor: '#8daae5',
     href: 'https://ethwaterloo.com/',
-  }
+  },
 ];
-
 
 const PREVIOUS_EVENTS = [
   {
@@ -161,14 +160,15 @@ const Events = props => (
             <h2>Upcoming Events</h2>
           </HeadingContainer>
           <CardGrid>
-            {UPCOMING_EVENTS.map(({ avatar, ...event }) => {
+            {UPCOMING_EVENTS.map(({ avatar, ...event }, index) => {
               const avatarImg = data.allFile.edges.find(
                 ({ node }) => node.relativePath === avatar
               ).node;
               return (
                 <EventCard
-                  {...event}
                   avatar={avatarImg.childImageSharp.fluid}
+                  key={index}
+                  {...event}
                 />
               );
             })}

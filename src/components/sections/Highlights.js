@@ -93,8 +93,11 @@ class Highlights extends Component {
           </Heading>
           <H4>Featured</H4>
           <Featured>
-            {FEATURED.map(({ title, duration, location, url, image }) => (
-              <Video onClick={() => this.handleVideoThumbClick(url)}>
+            {FEATURED.map(({ title, duration, location, url }) => (
+              <Video
+                onClick={() => this.handleVideoThumbClick(url)}
+                key={title}
+              >
                 <img src={this.getVideoThumb(url)} alt={title} />
                 <Overlay>
                   <PlayIcon />
@@ -110,7 +113,7 @@ class Highlights extends Component {
           <H4>RECENT</H4>
           <HorizontalScroller video>
             {RECENT.map(({ title, duration, location, url }) => (
-              <div>
+              <div key={title}>
                 <Video small onClick={() => this.handleVideoThumbClick(url)}>
                   <img src={this.getVideoThumb(url)} alt={title} />
                   <PlayIcon />
