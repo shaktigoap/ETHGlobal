@@ -1,5 +1,7 @@
 # ETHGlobal Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/018ddba7-fc6a-4cce-bea9-80a64d0def24/deploy-status)](https://app.netlify.com/sites/dreamy-brahmagupta-5e3659/deploys)
+
 ethglobal.co
 
 ## Installation
