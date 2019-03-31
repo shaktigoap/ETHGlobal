@@ -6,7 +6,7 @@ import { Card, Pill } from 'components/global';
 const ANNOUCEMENT = {
   title: 'Announcement',
   content:
-    'Applications open for ETHDenver (Feb 15-17), ETHParis (Mar 8-10), and ETHCapeTown (Apr 19-21)!',
+    'Applications open for ETHCapeTown (Apr 19-21) and ETHNewYork (May 17-19)!',
 };
 
 const AlertCard = props => (
