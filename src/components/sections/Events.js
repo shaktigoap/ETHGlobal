@@ -24,7 +24,7 @@ const UPCOMING_EVENTS = [
     dates: 'May 17-19, 2019',
     avatar: 'ethnewyork.png',
     primaryColor: '#000000',
-    href: 'https://twitter.com/ethnewyork',
+    href: 'http://ethnewyork.com',
   },
   {
     title: 'ETHIndia II',
