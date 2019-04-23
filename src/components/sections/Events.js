@@ -11,14 +11,6 @@ import { StaticQuery, graphql } from 'gatsby';
 
 const UPCOMING_EVENTS = [
   {
-    title: 'ETHCapeTown',
-    location: 'Cape Town, South Africa',
-    dates: 'Apr 19-20, 2019',
-    avatar: 'ethcapetown.jpg',
-    primaryColor: '#2F302E',
-    href: 'https://ethcapetown.com/',
-  },
-  {
     title: 'ETHNewYork',
     location: 'Brooklyn, New York',
     dates: 'May 17-19, 2019',
@@ -45,7 +37,7 @@ const UPCOMING_EVENTS = [
   {
     title: 'ETHWaterloo II',
     location: 'Waterloo, Ontario',
-    dates: 'Oct 11-13, 2019',
+    dates: 'Nov 8-10, 2019',
     avatar: 'ethwaterloo.jpg',
     primaryColor: '#8daae5',
     href: 'https://ethwaterloo.com/',
@@ -53,6 +45,14 @@ const UPCOMING_EVENTS = [
 ];
 
 const PREVIOUS_EVENTS = [
+  {
+    title: 'ETHCapeTown',
+    location: 'Cape Town, South Africa',
+    dates: 'Apr 19-20, 2019',
+    avatar: 'ethcapetown.jpg',
+    primaryColor: '#2F302E',
+    href: 'https://ethcapetown.com/',
+  },
   {
     title: 'ETHParis',
     location: 'Paris, France',
